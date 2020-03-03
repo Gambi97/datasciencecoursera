@@ -183,3 +183,50 @@ yesnofac = factor(yesno, levels=c("yes","no"))
 relevel(yesnofac, ref="yes")
 ```
 
+# Reshape
+```{r}
+library(reshape2)
+head(mtcars)
+```
+
+# melting
+```{r}
+#renderli più leggibili
+mtcars$carname <- rownames(mtcars)
+carMelt <- melt(mtcars, id=c("carname","gear","cyl"), measure.vars = c("mpg","hp")) # divido in varibili id e varibili misurabili
+head(carMelt)
+tail(carMelt)
+```
+
+# Casting dataframes
+```{r}
+cylData <- dcast(carMelt, cyl ~ variable )
+cylData
+```
+
+```{r}
+cylData <- dcast(carMelt, cyl ~ variable, mean)
+cylData
+```
+
+# Managing Dataframes with dplyr 
+```{r}
+#chicago <- readRDS("chicago.rds") erroe
+```
+# Merging dat
+```{r}
+df1=data.frame(id=sample(1:10), x=rnorm(10))
+df2=data.frame(id=sample(1:10), y=rnorm(10))
+dflist = list(df1, df2)
+library(plyr)
+join_all(dflist)
+```
+
+
+
+
+
+
+
+
+
