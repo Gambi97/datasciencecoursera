@@ -89,11 +89,13 @@ quantile(restData$councilDistrict , na.rm=TRUE)
 quantile(restData$zipCode , na.rm=TRUE)
 ```
 ```{r}
-quantile(restData$zipCode, probs=c(0.5,0.75,0.9)) #guardo le probabilità che mi interessano
+quantile(restData$zipCode, probs=c(0.5,0.75,0.9)) 
+#guardo le probabilità che mi interessano
 ```
 # Table
 ```{r}
-table(restData$zipCode , useNA="ifany") #quante volte appaiono i numeri nella tabella, aggiungo una colonna se ci sono NA per contarli
+table(restData$zipCode , useNA="ifany") 
+#quante volte appaiono i numeri nella tabella, aggiungo una colonna se ci sono NA per contarli
 ```
 ```{r}
 table (restData$policeDistrict, restData$zipCode ) #conto quanti ristoranti ci sono in un distretto di polizia in un detetminato zipcode
@@ -115,4 +117,69 @@ colSums(is.na(restData)) #conta gli NA
 all(colSums(is.na(restData))==0) #verifica che sono zero i Na de quella colonna
 ```
 # Visualizza con carateristiche precise
+```{r}
+table(restData$zipCode %in% c("21212", "21213")) 
+#cerca quante volte appaiono i due valori nella colonna
+```
+_se voglio avere solo i ristoranti con quelle carattersitiche_
+_faccio un subset_
+```{r}
+restData[restData$zipCode %in% c("21212", "21213"),]
+```
+
+# Cross tabs
+```{r}
+data("UCBAdmissions")
+df = as.data.frame(UCBAdmissions) # creo il database
+summary(df)
+```
+_cerco delle relazioni nei data_
+
+```{r}
+xt <- xtabs(Freq  ~ Gender + Admit, data= df  )
+#freq è la variabile che voglio far vedere nella tabella
+# gli altre sono le categorie
+xt
+```
+
+
+
+# Creating sequences
+
+```{r}
+s1 <- seq(1,10,by=2); s1
+s2 <- seq(1,10,length=3); s2
+```
+
+# Subsetting variables
+
+```{r}
+restData$nearme = restData$neighborhood %in% c("Roland Park", "Homeland")
+table(restData$nearme)
+#cerco tutti i ristoranti che ci trovano vicino a Roland e Homeland
+```
+
+# Creating binary variables
+```{r}
+restData$zipWrong = ifelse(restData$zipCode < 0, TRUE, FALSE)
+table(restData$zipWrong, restData$zipCode < 0)
+```
+
+# Creating factor variables 
+```{r}
+restData$zcf <- factor(restData$zipCode)
+#crea dei livelli
+restData$zcf[1:3]
+```
+
+```{r}
+class(restData$zcf)# guardo di che classe è
+```
+
+# Levels of factor variables
+```{r}
+yesno <- sample(c("yes","no"), size = 10, replace=TRUE)
+yesnofac = factor(yesno, levels=c("yes","no"))
+relevel(yesnofac, ref="yes")
+```
 

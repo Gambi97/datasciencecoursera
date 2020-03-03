@@ -684,9 +684,409 @@ all(restData$zipCode &gt; 0)</code></pre>
 <div id="visualizza-con-carateristiche-precise" class="section level1">
 <h1>Visualizza con carateristiche precise</h1>
 <!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxudGFibGUocmVzdERhdGEkemlwQ29kZSAlaW4lIGMoXCIyMTIxMlwiLCBcIjIxMjEzXCIpKSBcbmBgYCJ9 -->
+<pre class="r"><code>table(restData$zipCode %in% c(&quot;21212&quot;, &quot;21213&quot;)) </code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5GQUxTRSAgVFJVRSBcbiAxMjY4ICAgIDU5IFxuIn0= -->
+<pre><code>
+FALSE  TRUE 
+ 1268    59 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2NlcmNhIHF1YW50ZSB2b2x0ZSBhcHBhaW9ubyBpIGR1ZSB2YWxvcmkgbmVsbGEgY29sb25uYVxuYGBgIn0= -->
+<pre class="r"><code>#cerca quante volte appaiono i due valori nella colonna</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><em>se voglio avere solo i ristoranti con quelle carattersitiche</em> <em>faccio un subset</em></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVzdERhdGFbcmVzdERhdGEkemlwQ29kZSAlaW4lIGMoXCIyMTIxMlwiLCBcIjIxMjEzXCIpLF1cbmBgYCJ9 -->
+<pre class="r"><code>restData[restData$zipCode %in% c(&quot;21212&quot;, &quot;21213&quot;),]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIG5hbWUgemlwQ29kZVxuMjkgICAgICAgICAgICAgICAgICAgICAgQkFZIEFUTEFOVElDIENMVUIgICAyMTIxMlxuMzkgICAgICAgICAgICAgICAgICAgICAgICAgICAgQkVSTVVEQSBCQVIgICAyMTIxM1xuOTIgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBBVFdBVEVSJ1MgICAyMTIxMlxuMTExICAgICAgICAgICAgQkFMVElNT1JFIEVTVE9OSUFOIFNPQ0lFVFkgICAyMTIxM1xuMTg3ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgQ0FGRSBaRU4gICAyMTIxMlxuMjIwICAgICAgICAgICAgICAgICAgIENFUklFTExPIEZJTkUgRk9PRFMgICAyMTIxMlxuMjY2ICAgIENMSUZUT04gUEFSSyBHT0xGIENPVVJTRSBTTkFDSyBCQVIgICAyMTIxM1xuMjc2ICAgICAgICAgICAgICAgIENMVUIgSE9VU0UgQkFSICYgR1JJTEwgICAyMTIxM1xuMjg5ICAgICAgICAgICAgICAgICBDTFVCSE9VU0UgQkFSICYgR1JJTEwgICAyMTIxM1xuMjkxICAgICAgICAgICAgICAgICAgICAgICAgICAgQ09DS1kgTE9VJ1MgICAyMTIxM1xuMzYyICAgICAgIERSRUFNIFRBVkVSTiwgQ0FSUklCRUFOICBVLlMuQS4gICAyMTIxM1xuMzczICAgICAgICAgICAgICAgICAgICAgICAgIERVTktJTiBET05VVFMgICAyMTIxMlxuMzgzICAgICAgICBFQVNUU0lERSAgU1BPUlRTICBTT0NJQUwgIENMVUIgICAyMTIxM1xuNDE3ICAgICAgICAgICAgICAgICAgICAgIEZJRUxEUyBPTEQgVFJBSUwgICAyMTIxMlxuNDc1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBHUkFORCBDUlUgICAyMTIxMlxuNTQ1ICAgICAgICAgICAgICAgICAgICAgICAgICAgUkFORFknUyBCQVIgICAyMTIxM1xuNjA0ICAgICBNVVJQSFknUyBORUlHSEJPUkhPT0QgQkFSICYgR1JJTEwgICAyMTIxMlxuNjE2ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBORU9QT0wgICAyMTIxMlxuNjIwICAgICAgICAgICAgIE5FVyBDTFVCIFRIVU5ERVJCSVJEIElOQy4gICAyMTIxM1xuNjI2ICAgICAgICAgICAgICAgICAgICBORVcgTUFZRklFTEQsIElOQy4gICAyMTIxM1xuNjc4ICAgICAgICAgICAgICAgICAgICAgICAgICBJS0FOIFNFQUZPT0QgICAyMTIxMlxuNzExICAgICAgICAgICAgICAgICAgICAgICAgICBLQVktQ0VFIENMVUIgICAyMTIxMlxuNzYzICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBMQSdSQUUgICAyMTIxM1xuNzc3ICAgICAgICAgICAgICAgICAgTEVNT05HUkFTUyBCQUxUSU1PUkUgICAyMTIxM1xuNzc5ICAgICAgICAgICAgICAgICAgIExFTidTIFNBTkRXSUNIIFNIT1AgICAyMTIxM1xuODQ1ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE1DRE9OQUxEJ1MgICAyMTIxM1xuODUyICAgICAgICAgICAgICAgICAgICAgICAgICAgIE1DRE9OQUxEJ1MgICAyMTIxMlxuODczICAgICAgICAgICAgICAgICAgTkVXIFJFWCBMSVFVT1JTLElOQy4gICAyMTIxMlxuODk1ICAgICAgICAgICAgICAgICAgICAgICAgICAgICBPSyBUQVZFUk4gICAyMTIxM1xuOTE5ICAgICAgICAgICAgICAgICAgICAgICAgICBQQU5FUkEgQlJFQUQgICAyMTIxMlxuOTQwICAgICAgICAgICAgICAgICAgICBQRUlXRUkgQVNJQU4gRElORVIgICAyMTIxMlxuOTQ5ICAgICAgICAgICAgICAgICAgIFBFUkdVU0EgRU5URVJQUklTRVMgICAyMTIxMlxuOTU3ICAgICAgICAgICAgICAgUEhBTlRPTSdTIEJBUiBBTkQgR1JJTEwgICAyMTIxM1xuOTc2ICAgICAgICAgIFBPUEVZRVMgRkFNT1VTIEZSSUVEIENISUNLRU4gICAyMTIxMlxuOTk0ICAgICAgICAgICAgICAgICAgICAgICAgIFJPQkJJRSdTIE5FU1QgICAyMTIxM1xuMTAxNyAgICAgICAgICAgICAgICAgICAgICAgICAgUlVUTEFORCBCQVIgICAyMTIxM1xuMTAxOCAgICAgICAgICAgICAgICAgICAgICBSWUFOJ1MgREFVR0hURVIgICAyMTIxMlxuMTAyMiAgICAgICAgIHNhaWdvbiByZW1lbWJlcmVkIHJlc3RhdXJhbnQgICAyMTIxMlxuMTA1MyAgICAgICAgICAgICAgICBTSElSTEVZJ1MgIEhPTkVZIEhPTEUgICAyMTIxM1xuMTEyMCAgICAgICAgICAgICAgICAgICAgIFNURUVQTEUgQ0hBU0UgSUkgICAyMTIxM1xuMTEyMiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBTVUJXQVkgICAyMTIxM1xuMTE1MyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIFRBTS1UQU0gICAyMTIxMlxuMTE1NSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgVEFTVEUgICAyMTIxMlxuMTE1OSAgICAgICAgICAgICAgICAgICAgICAgICBUQVlMT1JTIEVBU1QgICAyMTIxM1xuMTE4NiAgICAgICAgICAgICAgICBUSEUgRURHRSBCQVIgJiBMT1VOR0UgICAyMTIxM1xuMTE4NyBUSEUgRURHRSBCQVIgJiBMT1VOR0UgLSBLSVRDSEVOIEFSRUEgICAyMTIxM1xuMTE5OCAgICAgICAgICAgICAgIFRIRSBIT0xMT1cgQkFSICYgR1JJTEwgICAyMTIxMlxuMTIwOSAgICAgICAgICAgICBUSEUgTkVXIEJVQ0tFVFQnUyBMT1VOR0UgICAyMTIxM1xuMTIzMiAgICAgICAgICAgICAgICAgICAgICAgICBUSFJFRSAgQUNFJ1MgICAyMTIxM1xuMTI0NiAgICAgICAgICAgICAgICAgVE9SQUlOJ1MgIEhJREUtQS1XQVkgICAyMTIxM1xuMTI1OSAgICAgICAgICAgICAgICAgICAgVFNVTkFNSSBCQUxUSU1PUkUgICAyMTIxM1xuMTI4NyAgICAgICAgICAgICAgICAgICAgICAgICBWSVRPJ1MgUElaWkEgICAyMTIxMlxuMTI5OCBXRU5EWSdTIE9MRCBGQVNISU9ORUQgSEFNQlVSR0VSUyAjOTYgICAyMTIxMlxuMTMwNCAgICAgICAgICAgICAgICAgV0hJVFRFTidTICAoNDUwMi0wNCkgICAyMTIxM1xuMTMxMiAgICAgICAgICAgICAgICAgICAgICAgICAgd296aSBsb3VuZ2UgICAyMTIxMlxuMTMxOSAgICAgICAgICAgWUVUSSBSRVNUQVVSQU5UICYgQ0FSUllPVVQgICAyMTIxMlxuMTMyMCAgICAgICAgICAgICAgICAgICAgIFlPUksgQ0xVQiBUQVZFUk4gICAyMTIxMlxuMTMyMyAgICAgICAgICAgIFpFTiBXRVNUIFJPQURTSURFIENBTlRJTkEgICAyMTIxMlxuMTMyNSAgICAgICAgICAgICAgICAgICAgIFpJTksnUyBDQUZcXHUwMDkwICAgMjEyMTNcbiAgICAgICAgICAgICAgICAgICAgbmVpZ2hib3Job29kIGNvdW5jaWxEaXN0cmljdCBwb2xpY2VEaXN0cmljdFxuMjkgICAgICAgICAgICAgICAgICAgICAgRG93bnRvd24gICAgICAgICAgICAgIDExICAgICAgICBDRU5UUkFMXG4zOSAgICAgICAgICAgICAgICAgQnJvYWR3YXkgRWFzdCAgICAgICAgICAgICAgMTIgICAgICAgIEVBU1RFUk5cbjkyICAgICBDaGlucXVhcGluIFBhcmstQmVsdmVkZXJlICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuMTExICAgICAgICAgICBTb3V0aCBDbGlmdG9uIFBhcmsgICAgICAgICAgICAgIDEyICAgICAgICBFQVNURVJOXG4xODcgICAgICAgICAgICAgICAgICAgICBSb3NlYmFuayAgICAgICAgICAgICAgIDQgICAgICAgTk9SVEhFUk5cbjIyMCAgICBDaGlucXVhcGluIFBhcmstQmVsdmVkZXJlICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuMjY2ICAgICAgICAgICAgICAgICAgRGFybGV5IFBhcmsgICAgICAgICAgICAgIDE0ICAgTk9SVEhFQVNURVJOXG4yNzYgIE9yYW5nZXZpbGxlIEluZHVzdHJpYWwgQXJlYSAgICAgICAgICAgICAgMTMgICAgICAgIEVBU1RFUk5cbjI4OSAgT3JhbmdldmlsbGUgSW5kdXN0cmlhbCBBcmVhICAgICAgICAgICAgICAxMyAgICAgICAgRUFTVEVSTlxuMjkxICAgICAgICAgICAgICAgIEJyb2Fkd2F5IEVhc3QgICAgICAgICAgICAgIDEyICAgICAgICBFQVNURVJOXG4zNjIgICAgICAgICAgICAgICAgQnJvYWR3YXkgRWFzdCAgICAgICAgICAgICAgMTMgICAgICAgIEVBU1RFUk5cbjM3MyAgICAgICAgICAgICAgICAgICAgIEhvbWVsYW5kICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuMzgzICAgICAgICAgICAgICAgIEJyb2Fkd2F5IEVhc3QgICAgICAgICAgICAgIDEzICAgICAgICBFQVNURVJOXG40MTcgICAgICAgICAgICAgICAgICAgTWlkLUdvdmFucyAgICAgICAgICAgICAgIDQgICAgICAgTk9SVEhFUk5cbjQ3NSAgICBDaGlucXVhcGluIFBhcmstQmVsdmVkZXJlICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuNTQ1ICAgICAgICAgICAgICAgIEJyb2Fkd2F5IEVhc3QgICAgICAgICAgICAgIDEyICAgICAgICBFQVNURVJOXG42MDQgICAgICAgICAgICAgICAgICAgTWlkLUdvdmFucyAgICAgICAgICAgICAgIDQgICAgICAgTk9SVEhFUk5cbjYxNiAgICBDaGlucXVhcGluIFBhcmstQmVsdmVkZXJlICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuNjIwICAgICAgICAgICAgICAgICAgTWlkZGxlIEVhc3QgICAgICAgICAgICAgIDEzICAgICAgICBFQVNURVJOXG42MjYgICAgICAgICAgICAgICAgQmVsYWlyLUVkaXNvbiAgICAgICAgICAgICAgMTMgICBOT1JUSEVBU1RFUk5cbjY3OCAgICBDaGlucXVhcGluIFBhcmstQmVsdmVkZXJlICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuNzExICAgICAgICAgICAgICAgICAgICAgSG9tZWxhbmQgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG43NjMgICAgICAgICAgICAgICAgICAgICAgIE9saXZlciAgICAgICAgICAgICAgMTIgICAgICAgIEVBU1RFUk5cbjc3NyAgICAgICAgICAgICAgICAgTGl0dGxlIEl0YWx5ICAgICAgICAgICAgICAgMSAgIFNPVVRIRUFTVEVSTlxuNzc5ICAgICAgICAgICAgICAgIEJyb2Fkd2F5IEVhc3QgICAgICAgICAgICAgIDEyICAgICAgICBFQVNURVJOXG44NDUgICAgICAgICAgIFNvdXRoIENsaWZ0b24gUGFyayAgICAgICAgICAgICAgMTIgICAgICAgIEVBU1RFUk5cbjg1MiAgICAgICAgICAgICAgIFJhZG5vci1XaW5zdG9uICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuODczICAgICAgICAgICAgICAgICAgV2lsc29uIFBhcmsgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG44OTUgICAgICAgICAgICAgICAgQmlkZGxlIFN0cmVldCAgICAgICAgICAgICAgMTMgICAgICAgIEVBU1RFUk5cbjkxOSAgICAgICAgICAgICAgICAgIExha2UgV2Fsa2VyICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuOTQwICAgICAgICAgICAgICAgICAgIENlZGFyY3JvZnQgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG45NDkgICAgICAgICAgICAgICAgICAgICBSb3NlYmFuayAgICAgICAgICAgICAgIDQgICAgICAgTk9SVEhFUk5cbjk1NyAgICAgICAgICAgICAgICBCZWxhaXItRWRpc29uICAgICAgICAgICAgICAgMyAgIE5PUlRIRUFTVEVSTlxuOTc2ICAgICAgICAgICAgICAgV2luc3Rvbi1Hb3ZhbnMgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG45OTQgICAgICAgICAgICAgICAgQnJvYWR3YXkgRWFzdCAgICAgICAgICAgICAgMTIgICAgICAgIEVBU1RFUk5cbjEwMTcgICAgICAgICAgICAgICBCcm9hZHdheSBFYXN0ICAgICAgICAgICAgICAxMiAgICAgICAgRUFTVEVSTlxuMTAxOCAgIENoaW5xdWFwaW4gUGFyay1CZWx2ZWRlcmUgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG4xMDIyICAgICAgICAgICAgICAgICAgTWlkLUdvdmFucyAgICAgICAgICAgICAgIDQgICAgICAgTk9SVEhFUk5cbjEwNTMgICAgICAgICAgICAgICBCcm9hZHdheSBFYXN0ICAgICAgICAgICAgICAxMyAgICAgICAgRUFTVEVSTlxuMTEyMCAgICAgICAgICAgICAgIEJpZGRsZSBTdHJlZXQgICAgICAgICAgICAgIDEzICAgICAgICBFQVNURVJOXG4xMTIyICAgICAgICAgICAgICAgICAgICAgIE9saXZlciAgICAgICAgICAgICAgMTIgICAgICAgIEVBU1RFUk5cbjExNTMgICAgICAgICAgICAgICAgICBNaWQtR292YW5zICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuMTE1NSAgICAgICAgICAgICAgICAgIE1pZC1Hb3ZhbnMgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG4xMTU5ICAgICAgICAgICAgICAgICAgICAgICBCZXJlYSAgICAgICAgICAgICAgMTMgICAgICAgIEVBU1RFUk5cbjExODYgICAgICAgICAgICAgICBCcm9hZHdheSBFYXN0ICAgICAgICAgICAgICAxMiAgICAgICAgRUFTVEVSTlxuMTE4NyAgICAgICAgICAgICAgIEJyb2Fkd2F5IEVhc3QgICAgICAgICAgICAgIDEyICAgICAgICBFQVNURVJOXG4xMTk4ICAgICAgICAgICAgICAgICAgICBSb3NlYmFuayAgICAgICAgICAgICAgIDQgICAgICAgTk9SVEhFUk5cbjEyMDkgICAgICAgICAgICAgICBCcm9hZHdheSBFYXN0ICAgICAgICAgICAgICAxMyAgICAgICAgRUFTVEVSTlxuMTIzMiAgICAgICAgICAgICAgIEJlbGFpci1FZGlzb24gICAgICAgICAgICAgICAzICAgTk9SVEhFQVNURVJOXG4xMjQ2ICAgICAgICAgICAgICAgQnJvYWR3YXkgRWFzdCAgICAgICAgICAgICAgMTIgICAgICAgIEVBU1RFUk5cbjEyNTkgICAgICAgICAgICAgICAgTGl0dGxlIEl0YWx5ICAgICAgICAgICAgICAgMSAgIFNPVVRIRUFTVEVSTlxuMTI4NyAgICAgICAgICAgICAgICAgIENlZGFyY3JvZnQgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG4xMjk4ICAgICAgICAgICAgICAgICAgICBIb21lbGFuZCAgICAgICAgICAgICAgIDQgICAgICAgTk9SVEhFUk5cbjEzMDQgICAgICAgICAgIENsYXJlbW9udC1GcmVlZG9tICAgICAgICAgICAgICAxMyAgIE5PUlRIRUFTVEVSTlxuMTMxMiAgICAgICAgICAgICAgICAgICAgR3VpbGZvcmQgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG4xMzE5ICAgICAgICAgICAgICAgICAgICBSb3NlYmFuayAgICAgICAgICAgICAgIDQgICAgICAgTk9SVEhFUk5cbjEzMjAgICAgICAgICAgICAgICAgICAgIEhvbWVsYW5kICAgICAgICAgICAgICAgNCAgICAgICBOT1JUSEVSTlxuMTMyMyAgICAgICAgICAgICAgICAgICAgUm9zZWJhbmsgICAgICAgICAgICAgICA0ICAgICAgIE5PUlRIRVJOXG4xMzI1ICAgICAgICAgICAgICAgQmVsYWlyLUVkaXNvbiAgICAgICAgICAgICAgMTMgICBOT1JUSEVBU1RFUk5cbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgTG9jYXRpb24uMSBYMjAxMC5DZW5zdXMuTmVpZ2hib3Job29kc1xuMjkgICAgICAgIDIwNiBSRURXT09EIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMzkgICAgICAgIDE4MDEgTk9SVEggQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuOTIgICAgIDUyOSBCRUxWRURFUkUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTExICAgICAgIDE5MzIgQkVMQUlSIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTg3ICAgIDQzOCBCRUxWRURFUkUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMjIwICAgIDUyOSBCRUxWRURFUkUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMjY2ICAgICAgICAyNzAxIFNUIExPIERSXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMjc2ICAgICAgNDIxNyBFUkRNQU4gQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMjg5ICAgICAgNDIxNyBFUkRNQU4gQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMjkxICAgICAgIDIxMDEgTk9SVEggQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMzYyICAgMjMwMCBMQUZBWUVUVEUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMzczICAgICAgICAgNTQyMiBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMzgzICAxMjAzIENPTExJTkdUT04gQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNDE3ICAgICAgICAgNTcyMyBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNDc1ICAgIDUyNyBCRUxWRURFUkUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNTQ1ICAgICAgIDIxMzUgTk9SVEggQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNjA0ICAgICAgICAgNTg0NyBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNjE2ICAgIDUyOSBCRUxWRURFUkUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNjIwICAgICAgICAyMjAxIENIQVNFIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNjI2ICAgICAgIDMzNDkgQkVMQUlSIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNjc4ICAgIDUyOSBCRUxWRURFUkUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNzExICAgICAyMDEgSE9NRUxBTkQgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNzYzICAgICAgMTAwMCBIT0ZGTUFOIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNzc3ICAgICAxMzAwIEJBTksgU1RSRUVUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuNzc5ICAgMTUwMCBXQVNISU5HVE9OIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuODQ1ICAgICAgICAyMDAxIEJST0FEV0FZXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuODUyICAgICAgICAgNTEwMCBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuODczICAgICAgICAgNDYzNyBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuODk1ICAgICAgIDIzMDEgQklERExFIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuOTE5ICAgICA2MzA3IDEgMiBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuOTQwICAgICAgICAgNjMwMiBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuOTQ5ICAgICAgICAgNTkyOCBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuOTU3ICAgICAgIDM1MzkgQkVMQUlSIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuOTc2ICAgICAgICAgNTAwMiBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuOTk0ICAgICAgIDIyNTAgTk9SVEggQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTAxNyAgICAxNTA4IFJVVExBTkQgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTAxOCAgIDYwMCBCRUxWRURFUkUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTAyMiAgICAgICAgNTg1NyB5b3JrIHJkXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTA1MyAgICAgIDIzMDAgT0xJVkVSIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTEyMCAgICAgICAyNDAxIENIQVNFIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTEyMiAgICAgIDE0MDAgTk9SVEggQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTE1MyAgICAgICAgNTcyMiBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTE1NSAgIDUxMCBCRUxWRURFUkUgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTE1OSAgICAgMTIwMSBQT1RPTUFDIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTE4NiAgICAgMjAxNSBGRURFUkFMIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTE4NyAgICAgMjAxNSBGRURFUkFMIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTE5OCAgICAgICAgNTkyMSBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTIwOSAgICAgMTQzMiBDSEVTVEVSIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTIzMiAgICAgIDM1MzQgYmVsYWlyIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTI0NiAgIDE3MDEgRUxMU1dPUlRIIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTI1OSAgICAgICAgMTMwMCBCQU5LIFNUXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTI4NyAgICAgICAgNjMwNCBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTI5OCAgICAgICAgNTYxNSBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTMwNCAgICAgNDUwMiBFUkRNQU4gQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTMxMiAgICAgICAgNDUxNSBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTMxOSAgICAgICAgNTkyNiBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTMyMCAgICAgICAgNTQwNyBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTMyMyAgICAgICAgNTkxNiBZT1JLIFJEXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuMTMyNSAgIDMzMDAgTEFXTlZJRVcgQVZFXFxuQmFsdGltb3JlLCBNRCAgICAgICAgICAgICAgICAgICAgICAgICBOQVxuICAgICBYMjAxMC5DZW5zdXMuV2FyZHMuUHJlY2luY3RzIFppcC5Db2Rlc1xuMjkgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMzkgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuOTIgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTExICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTg3ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMjIwICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMjY2ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMjc2ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMjg5ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMjkxICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMzYyICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMzczICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMzgzICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNDE3ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNDc1ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNTQ1ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNjA0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNjE2ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNjIwICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNjI2ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNjc4ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNzExICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNzYzICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNzc3ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuNzc5ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuODQ1ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuODUyICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuODczICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuODk1ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuOTE5ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuOTQwICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuOTQ5ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuOTU3ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuOTc2ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuOTk0ICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTAxNyAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTAxOCAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTAyMiAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTA1MyAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTEyMCAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTEyMiAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTE1MyAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTE1NSAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTE1OSAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTE4NiAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTE4NyAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTE5OCAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTIwOSAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTIzMiAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTI0NiAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTI1OSAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTI4NyAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTI5OCAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTMwNCAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTMxMiAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTMxOSAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTMyMCAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTMyMyAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuMTMyNSAgICAgICAgICAgICAgICAgICAgICAgICAgIE5BICAgICAgICBOQVxuIn0= -->
+<pre><code>                                     name zipCode
+29                      BAY ATLANTIC CLUB   21212
+39                            BERMUDA BAR   21213
+92                              ATWATER'S   21212
+111            BALTIMORE ESTONIAN SOCIETY   21213
+187                              CAFE ZEN   21212
+220                   CERIELLO FINE FOODS   21212
+266    CLIFTON PARK GOLF COURSE SNACK BAR   21213
+276                CLUB HOUSE BAR &amp; GRILL   21213
+289                 CLUBHOUSE BAR &amp; GRILL   21213
+291                           COCKY LOU'S   21213
+362       DREAM TAVERN, CARRIBEAN  U.S.A.   21213
+373                         DUNKIN DONUTS   21212
+383        EASTSIDE  SPORTS  SOCIAL  CLUB   21213
+417                      FIELDS OLD TRAIL   21212
+475                             GRAND CRU   21212
+545                           RANDY'S BAR   21213
+604     MURPHY'S NEIGHBORHOOD BAR &amp; GRILL   21212
+616                                NEOPOL   21212
+620             NEW CLUB THUNDERBIRD INC.   21213
+626                    NEW MAYFIELD, INC.   21213
+678                          IKAN SEAFOOD   21212
+711                          KAY-CEE CLUB   21212
+763                                LA'RAE   21213
+777                  LEMONGRASS BALTIMORE   21213
+779                   LEN'S SANDWICH SHOP   21213
+845                            MCDONALD'S   21213
+852                            MCDONALD'S   21212
+873                  NEW REX LIQUORS,INC.   21212
+895                             OK TAVERN   21213
+919                          PANERA BREAD   21212
+940                    PEIWEI ASIAN DINER   21212
+949                   PERGUSA ENTERPRISES   21212
+957               PHANTOM'S BAR AND GRILL   21213
+976          POPEYES FAMOUS FRIED CHICKEN   21212
+994                         ROBBIE'S NEST   21213
+1017                          RUTLAND BAR   21213
+1018                      RYAN'S DAUGHTER   21212
+1022         saigon remembered restaurant   21212
+1053                SHIRLEY'S  HONEY HOLE   21213
+1120                     STEEPLE CHASE II   21213
+1122                               SUBWAY   21213
+1153                              TAM-TAM   21212
+1155                                TASTE   21212
+1159                         TAYLORS EAST   21213
+1186                THE EDGE BAR &amp; LOUNGE   21213
+1187 THE EDGE BAR &amp; LOUNGE - KITCHEN AREA   21213
+1198               THE HOLLOW BAR &amp; GRILL   21212
+1209             THE NEW BUCKETT'S LOUNGE   21213
+1232                         THREE  ACE'S   21213
+1246                 TORAIN'S  HIDE-A-WAY   21213
+1259                    TSUNAMI BALTIMORE   21213
+1287                         VITO'S PIZZA   21212
+1298 WENDY'S OLD FASHIONED HAMBURGERS #96   21212
+1304                 WHITTEN'S  (4502-04)   21213
+1312                          wozi lounge   21212
+1319           YETI RESTAURANT &amp; CARRYOUT   21212
+1320                     YORK CLUB TAVERN   21212
+1323            ZEN WEST ROADSIDE CANTINA   21212
+1325                     ZINK'S CAF\u0090   21213
+                    neighborhood councilDistrict policeDistrict
+29                      Downtown              11        CENTRAL
+39                 Broadway East              12        EASTERN
+92     Chinquapin Park-Belvedere               4       NORTHERN
+111           South Clifton Park              12        EASTERN
+187                     Rosebank               4       NORTHERN
+220    Chinquapin Park-Belvedere               4       NORTHERN
+266                  Darley Park              14   NORTHEASTERN
+276  Orangeville Industrial Area              13        EASTERN
+289  Orangeville Industrial Area              13        EASTERN
+291                Broadway East              12        EASTERN
+362                Broadway East              13        EASTERN
+373                     Homeland               4       NORTHERN
+383                Broadway East              13        EASTERN
+417                   Mid-Govans               4       NORTHERN
+475    Chinquapin Park-Belvedere               4       NORTHERN
+545                Broadway East              12        EASTERN
+604                   Mid-Govans               4       NORTHERN
+616    Chinquapin Park-Belvedere               4       NORTHERN
+620                  Middle East              13        EASTERN
+626                Belair-Edison              13   NORTHEASTERN
+678    Chinquapin Park-Belvedere               4       NORTHERN
+711                     Homeland               4       NORTHERN
+763                       Oliver              12        EASTERN
+777                 Little Italy               1   SOUTHEASTERN
+779                Broadway East              12        EASTERN
+845           South Clifton Park              12        EASTERN
+852               Radnor-Winston               4       NORTHERN
+873                  Wilson Park               4       NORTHERN
+895                Biddle Street              13        EASTERN
+919                  Lake Walker               4       NORTHERN
+940                   Cedarcroft               4       NORTHERN
+949                     Rosebank               4       NORTHERN
+957                Belair-Edison               3   NORTHEASTERN
+976               Winston-Govans               4       NORTHERN
+994                Broadway East              12        EASTERN
+1017               Broadway East              12        EASTERN
+1018   Chinquapin Park-Belvedere               4       NORTHERN
+1022                  Mid-Govans               4       NORTHERN
+1053               Broadway East              13        EASTERN
+1120               Biddle Street              13        EASTERN
+1122                      Oliver              12        EASTERN
+1153                  Mid-Govans               4       NORTHERN
+1155                  Mid-Govans               4       NORTHERN
+1159                       Berea              13        EASTERN
+1186               Broadway East              12        EASTERN
+1187               Broadway East              12        EASTERN
+1198                    Rosebank               4       NORTHERN
+1209               Broadway East              13        EASTERN
+1232               Belair-Edison               3   NORTHEASTERN
+1246               Broadway East              12        EASTERN
+1259                Little Italy               1   SOUTHEASTERN
+1287                  Cedarcroft               4       NORTHERN
+1298                    Homeland               4       NORTHERN
+1304           Claremont-Freedom              13   NORTHEASTERN
+1312                    Guilford               4       NORTHERN
+1319                    Rosebank               4       NORTHERN
+1320                    Homeland               4       NORTHERN
+1323                    Rosebank               4       NORTHERN
+1325               Belair-Edison              13   NORTHEASTERN
+                             Location.1 X2010.Census.Neighborhoods
+29        206 REDWOOD ST\nBaltimore, MD                         NA
+39        1801 NORTH AVE\nBaltimore, MD                         NA
+92     529 BELVEDERE AVE\nBaltimore, MD                         NA
+111       1932 BELAIR RD\nBaltimore, MD                         NA
+187    438 BELVEDERE AVE\nBaltimore, MD                         NA
+220    529 BELVEDERE AVE\nBaltimore, MD                         NA
+266        2701 ST LO DR\nBaltimore, MD                         NA
+276      4217 ERDMAN AVE\nBaltimore, MD                         NA
+289      4217 ERDMAN AVE\nBaltimore, MD                         NA
+291       2101 NORTH AVE\nBaltimore, MD                         NA
+362   2300 LAFAYETTE AVE\nBaltimore, MD                         NA
+373         5422 YORK RD\nBaltimore, MD                         NA
+383  1203 COLLINGTON AVE\nBaltimore, MD                         NA
+417         5723 YORK RD\nBaltimore, MD                         NA
+475    527 BELVEDERE AVE\nBaltimore, MD                         NA
+545       2135 NORTH AVE\nBaltimore, MD                         NA
+604         5847 YORK RD\nBaltimore, MD                         NA
+616    529 BELVEDERE AVE\nBaltimore, MD                         NA
+620        2201 CHASE ST\nBaltimore, MD                         NA
+626       3349 BELAIR RD\nBaltimore, MD                         NA
+678    529 BELVEDERE AVE\nBaltimore, MD                         NA
+711     201 HOMELAND AVE\nBaltimore, MD                         NA
+763      1000 HOFFMAN ST\nBaltimore, MD                         NA
+777     1300 BANK STREET\nBaltimore, MD                         NA
+779   1500 WASHINGTON ST\nBaltimore, MD                         NA
+845        2001 BROADWAY\nBaltimore, MD                         NA
+852         5100 YORK RD\nBaltimore, MD                         NA
+873         4637 YORK RD\nBaltimore, MD                         NA
+895       2301 BIDDLE ST\nBaltimore, MD                         NA
+919     6307 1 2 YORK RD\nBaltimore, MD                         NA
+940         6302 YORK RD\nBaltimore, MD                         NA
+949         5928 YORK RD\nBaltimore, MD                         NA
+957       3539 BELAIR RD\nBaltimore, MD                         NA
+976         5002 YORK RD\nBaltimore, MD                         NA
+994       2250 NORTH AVE\nBaltimore, MD                         NA
+1017    1508 RUTLAND AVE\nBaltimore, MD                         NA
+1018   600 BELVEDERE AVE\nBaltimore, MD                         NA
+1022        5857 york rd\nBaltimore, MD                         NA
+1053      2300 OLIVER ST\nBaltimore, MD                         NA
+1120       2401 CHASE ST\nBaltimore, MD                         NA
+1122      1400 NORTH AVE\nBaltimore, MD                         NA
+1153        5722 YORK RD\nBaltimore, MD                         NA
+1155   510 BELVEDERE AVE\nBaltimore, MD                         NA
+1159     1201 POTOMAC ST\nBaltimore, MD                         NA
+1186     2015 FEDERAL ST\nBaltimore, MD                         NA
+1187     2015 FEDERAL ST\nBaltimore, MD                         NA
+1198        5921 YORK RD\nBaltimore, MD                         NA
+1209     1432 CHESTER ST\nBaltimore, MD                         NA
+1232      3534 belair RD\nBaltimore, MD                         NA
+1246   1701 ELLSWORTH ST\nBaltimore, MD                         NA
+1259        1300 BANK ST\nBaltimore, MD                         NA
+1287        6304 YORK RD\nBaltimore, MD                         NA
+1298        5615 YORK RD\nBaltimore, MD                         NA
+1304     4502 ERDMAN AVE\nBaltimore, MD                         NA
+1312        4515 YORK RD\nBaltimore, MD                         NA
+1319        5926 YORK RD\nBaltimore, MD                         NA
+1320        5407 YORK RD\nBaltimore, MD                         NA
+1323        5916 YORK RD\nBaltimore, MD                         NA
+1325   3300 LAWNVIEW AVE\nBaltimore, MD                         NA
+     X2010.Census.Wards.Precincts Zip.Codes
+29                             NA        NA
+39                             NA        NA
+92                             NA        NA
+111                            NA        NA
+187                            NA        NA
+220                            NA        NA
+266                            NA        NA
+276                            NA        NA
+289                            NA        NA
+291                            NA        NA
+362                            NA        NA
+373                            NA        NA
+383                            NA        NA
+417                            NA        NA
+475                            NA        NA
+545                            NA        NA
+604                            NA        NA
+616                            NA        NA
+620                            NA        NA
+626                            NA        NA
+678                            NA        NA
+711                            NA        NA
+763                            NA        NA
+777                            NA        NA
+779                            NA        NA
+845                            NA        NA
+852                            NA        NA
+873                            NA        NA
+895                            NA        NA
+919                            NA        NA
+940                            NA        NA
+949                            NA        NA
+957                            NA        NA
+976                            NA        NA
+994                            NA        NA
+1017                           NA        NA
+1018                           NA        NA
+1022                           NA        NA
+1053                           NA        NA
+1120                           NA        NA
+1122                           NA        NA
+1153                           NA        NA
+1155                           NA        NA
+1159                           NA        NA
+1186                           NA        NA
+1187                           NA        NA
+1198                           NA        NA
+1209                           NA        NA
+1232                           NA        NA
+1246                           NA        NA
+1259                           NA        NA
+1287                           NA        NA
+1298                           NA        NA
+1304                           NA        NA
+1312                           NA        NA
+1319                           NA        NA
+1320                           NA        NA
+1323                           NA        NA
+1325                           NA        NA</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="cross-tabs" class="section level1">
+<h1>Cross tabs</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuZGF0YShcIlVDQkFkbWlzc2lvbnNcIilcbmRmID0gYXMuZGF0YS5mcmFtZShVQ0JBZG1pc3Npb25zKSAjIGNyZW8gaWwgZGF0YWJhc2VcbnN1bW1hcnkoZGYpXG5gYGAifQ== -->
+<pre class="r"><code>data(&quot;UCBAdmissions&quot;)
+df = as.data.frame(UCBAdmissions) # creo il database
+summary(df)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgQWRtaXQgICAgICAgR2VuZGVyICAgRGVwdCAgICAgICBGcmVxICAgICAgXG4gQWRtaXR0ZWQ6MTIgICBNYWxlICA6MTIgICBBOjQgICBNaW4uICAgOiAgOC4wICBcbiBSZWplY3RlZDoxMiAgIEZlbWFsZToxMiAgIEI6NCAgIDFzdCBRdS46IDgwLjAgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgQzo0ICAgTWVkaWFuIDoxNzAuMCAgXG4gICAgICAgICAgICAgICAgICAgICAgICAgICBEOjQgICBNZWFuICAgOjE4OC42ICBcbiAgICAgICAgICAgICAgICAgICAgICAgICAgIEU6NCAgIDNyZCBRdS46MzAyLjUgIFxuICAgICAgICAgICAgICAgICAgICAgICAgICAgRjo0ICAgTWF4LiAgIDo1MTIuMCAgXG4ifQ== -->
+<pre><code>      Admit       Gender   Dept       Freq      
+ Admitted:12   Male  :12   A:4   Min.   :  8.0  
+ Rejected:12   Female:12   B:4   1st Qu.: 80.0  
+                           C:4   Median :170.0  
+                           D:4   Mean   :188.6  
+                           E:4   3rd Qu.:302.5  
+                           F:4   Max.   :512.0  </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p><em>cerco delle relazioni nei data</em></p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueHQgPC0geHRhYnMoRnJlcSAgfiBHZW5kZXIgKyBBZG1pdCwgZGF0YT0gZGYgIClcbiNmcmVxIMOoIGxhIHZhcmlhYmlsZSBjaGUgdm9nbGlvIGZhciB2ZWRlcmUgbmVsbGEgdGFiZWxsYVxuIyBnbGkgYWx0cmUgc29ubyBsZSBjYXRlZ29yaWVcbnh0XG5gYGAifQ== -->
+<pre class="r"><code>xt &lt;- xtabs(Freq  ~ Gender + Admit, data= df  )
+#freq è la variabile che voglio far vedere nella tabella
+# gli altre sono le categorie
+xt</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICBBZG1pdFxuR2VuZGVyICAgQWRtaXR0ZWQgUmVqZWN0ZWRcbiAgTWFsZSAgICAgICAxMTk4ICAgICAxNDkzXG4gIEZlbWFsZSAgICAgIDU1NyAgICAgMTI3OFxuIn0= -->
+<pre><code>        Admit
+Gender   Admitted Rejected
+  Male       1198     1493
+  Female      557     1278</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="creating-sequences" class="section level1">
+<h1>Creating sequences</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuczEgPC0gc2VxKDEsMTAsYnk9Mik7IHMxXG5gYGAifQ== -->
+<pre class="r"><code>s1 &lt;- seq(1,10,by=2); s1</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDEgMyA1IDcgOVxuIn0= -->
+<pre><code>[1] 1 3 5 7 9</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuczIgPC0gc2VxKDEsMTAsbGVuZ3RoPTMpOyBzMlxuYGBgIn0= -->
+<pre class="r"><code>s2 &lt;- seq(1,10,length=3); s2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdICAxLjAgIDUuNSAxMC4wXG4ifQ== -->
+<pre><code>[1]  1.0  5.5 10.0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="subsetting-variables" class="section level1">
+<h1>Subsetting variables</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVzdERhdGEkbmVhcm1lID0gcmVzdERhdGEkbmVpZ2hib3Job29kICVpbiUgYyhcIlJvbGFuZCBQYXJrXCIsIFwiSG9tZWxhbmRcIilcbnRhYmxlKHJlc3REYXRhJG5lYXJtZSlcbmBgYCJ9 -->
+<pre class="r"><code>restData$nearme = restData$neighborhood %in% c(&quot;Roland Park&quot;, &quot;Homeland&quot;)
+table(restData$nearme)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5GQUxTRSAgVFJVRSBcbiAxMzE0ICAgIDEzIFxuIn0= -->
+<pre><code>
+FALSE  TRUE 
+ 1314    13 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuI2NlcmNvIHR1dHRpIGkgcmlzdG9yYW50aSBjaGUgY2kgdHJvdmFubyB2aWNpbm8gYSBSb2xhbmQgZSBIb21lbGFuZFxuYGBgIn0= -->
+<pre class="r"><code>#cerco tutti i ristoranti che ci trovano vicino a Roland e Homeland</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="creating-binary-variables" class="section level1">
+<h1>Creating binary variables</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVzdERhdGEkemlwV3JvbmcgPSBpZmVsc2UocmVzdERhdGEkemlwQ29kZSA8IDAsIFRSVUUsIEZBTFNFKVxudGFibGUocmVzdERhdGEkemlwV3JvbmcsIHJlc3REYXRhJHppcENvZGUgPCAwKVxuYGBgIn0= -->
+<pre class="r"><code>restData$zipWrong = ifelse(restData$zipCode &lt; 0, TRUE, FALSE)
+table(restData$zipWrong, restData$zipCode &lt; 0)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgIFxuICAgICAgICBGQUxTRSBUUlVFXG4gIEZBTFNFICAxMzI2ICAgIDBcbiAgVFJVRSAgICAgIDAgICAgMVxuIn0= -->
+<pre><code>       
+        FALSE TRUE
+  FALSE  1326    0
+  TRUE      0    1</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="creating-factor-variables" class="section level1">
+<h1>Creating factor variables</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxucmVzdERhdGEkemNmIDwtIGZhY3RvcihyZXN0RGF0YSR6aXBDb2RlKVxuI2NyZWEgZGVpIGxpdmVsbGlcbnJlc3REYXRhJHpjZlsxOjNdXG5gYGAifQ== -->
+<pre class="r"><code>restData$zcf &lt;- factor(restData$zipCode)
+#crea dei livelli
+restData$zcf[1:3]</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDIxMjA2IDIxMjMxIDIxMjI0XG4zMiBMZXZlbHM6IC0yMTIyNiAyMTIwMSAyMTIwMiAyMTIwNSAyMTIwNiAyMTIwNyAyMTIwOCAyMTIwOSAuLi4gMjEyODdcbiJ9 -->
+<pre><code>[1] 21206 21231 21224
+32 Levels: -21226 21201 21202 21205 21206 21207 21208 21209 ... 21287</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxuY2xhc3MocmVzdERhdGEkemNmKVxuYGBgIn0= -->
+<pre class="r"><code>class(restData$zcf)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiZmFjdG9yXCJcbiJ9 -->
+<pre><code>[1] &quot;factor&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+</div>
+<div id="levels-of-factor-variables" class="section level1">
+<h1>Levels of factor variables</h1>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin eyJkYXRhIjoiYGBgclxueWVzbm8gPC0gc2FtcGxlKGMoXCJ5ZXNcIixcIm5vXCIpLCBzaXplID0gMTAsIHJlcGxhY2U9VFJVRSlcbnllc25vZmFjID0gZmFjdG9yKHllc25vLCBsZXZlbHM9YyhcInllc1wiLFwibm9cIikpXG5yZWxldmVsKHllc25vZmFjLCByZWY9XCJ5ZXNcIilcbmBgYCJ9 -->
+<pre class="r"><code>yesno &lt;- sample(c(&quot;yes&quot;,&quot;no&quot;), size = 10, replace=TRUE)
+yesnofac = factor(yesno, levels=c(&quot;yes&quot;,&quot;no&quot;))
+relevel(yesnofac, ref=&quot;yes&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBubyAgbm8gIHllcyBubyAgeWVzIHllcyBubyAgeWVzIHllcyB5ZXNcbkxldmVsczogeWVzIG5vXG4ifQ== -->
+<pre><code> [1] no  no  yes no  yes yes no  yes yes yes
+Levels: yes no</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiV0VFSyAzIgpvdXRwdXQ6CiAgcGRmX2RvY3VtZW50OiBkZWZhdWx0CiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdAotLS0KCgoKYGBge3J9CnNldC5zZWVkKDEzNDM1KQpYIDwtIGRhdGEuZnJhbWUoInZhcjEiPXNhbXBsZSgxOjUpLCAidmFyMiI9c2FtcGxlKDY6MTApLCAidmFyMyI9c2FtcGxlKDExOjE1KSkKWApgYGAKI2xlIG1pc2NoaW8gZSBpbnNlcmlzY28gZGVpIE5BCmBgYHtyfQpYIDwtIFhbc2FtcGxlKDE6NSksXQpYCgpgYGAKYGBge3J9ClgkdmFyMltjKDEsMyldID0gTkEKWApgYGAKZ3VhcmRhcmUgdW5hIGNvbG9ubmEgCmBgYHtyfQpYWywxXQpYWywidmFyMSJdCmBgYAojUmljZXJjYXJlIHNvbG8gZGV0ZXJtaW5lIGNvbG9ubmUgbyByaWdoZSBpbiBiYXNlIGEgbG9naWNoZQpgYGB7cn0KWFsoWCR2YXIxIDw9MyAmIFgkdmFyMyA+IDExKSxdCmBgYAojIFdoaWNoLCByaXRvcm5hIGdsaSBpbmRpY2kgY2hlIGFwcHJvdmFubyBkZXRlcm1pbmF0ZSBjb25kaXppb25pCmBgYHtyfQpYW3doaWNoKFgkdmFyMiA+IDgpLF0KYGBgCiMgcGVyIG9yZGluYXJlIGkgdmFsb3JpCmBgYHtyfQpzb3J0KFgkdmFyMSkgI2NyZXNjZW50ZQpzb3J0KFgkdmFyMSAsIGRlY3JlYXNpbmc9VFJVRSkKc29ydChYJHZhcjIgLCBuYS5sYXN0PVRSVUUpCgpgYGAKIyBvcmRpbmFyZSBpbCBkYXRhYnNlIGluIGJhc2UgYWkgdmFsb3JpIGRpIHVuYSBjb2xvbm5hCmBgYHtyfQpYW29yZGVyKFgkdmFyMSksXQpgYGAKIyBMaWJyZXJpYSBwbHlyCgpgYGB7cn0KbGlicmFyeShwbHlyKQphcnJhbmdlKFgsIHZhcjEpICNvcmRpbmEgaWwgZGF0YWJhc2UgcmlzcGV0dG8gYWxsYSBjb2xvbm5hCmFycmFuZ2UoWCwgZGVzYyh2YXIxKSkgI29yZGluYSBkZWNyZXNjZW50ZQpgYGAKIyBhZ2dpdW5nZXJlIHVuYSBudW92YSBjb2xvbm5hCmBgYHtyfQpYJHZhcjQgPC0gcm5vcm0oNSkKWApgYGAKYGBge3J9CiMgcG9zc28gZmFyZSBsbyBzdGVzcyBjb24gClkgPC0gY2JpbmQoWCwgcm5vcm0oNSkpClkKYGBgCgojIG1hbmlwb2xhcmUgaSBkYXRpIApgYGB7cn0KaWYoIWZpbGUuZXhpc3RzKCIuL0RhdGEiKSl7ZGlyLmNyZWF0ZSgiLi9EYXRhIil9CmZpbGVVcmwgPC0gImh0dHBzOi8vZGF0YS5iYWx0aW1vcmVjaXR5Lmdvdi9hcGkvdmlld3MvazVyeS1lZjNnL3Jvd3MuY3N2P2FjY2Vzc1R5cGU9RE9XTkxPQUQiCmRvd25sb2FkLmZpbGUoZmlsZVVybCxkZXN0ZmlsZT0iLi9EYXRhL3Jlc3RhdXJhbnRzLmNzdiIsIG1ldGhvZD0iY3VybCIpCnJlc3REYXRhIDwtIHJlYWQuY3N2KCIuL0RhdGEvcmVzdGF1cmFudHMuY3N2IikKYGBgCmBgYHtyfQpoZWFkKHJlc3REYXRhLCBuPTMpCnRhaWwocmVzdERhdGEsIG49MykKYGBgCgpgYGB7cn0Kc3VtbWFyeShyZXN0RGF0YSkKYGBgCmBgYHtyfQpzdHIocmVzdERhdGEpCmBgYAojIFF1YW50aWxlcyBvZiBxdWFudGl0YXRpdmUgdmFyaWFibGVzCl9UaGUgZ2VuZXJpYyBmdW5jdGlvbiBxdWFudGlsZSBwcm9kdWNlcyBzYW1wbGUgcXVhbnRpbGVzIGNvcnJlc3BvbmRpbmcgdG8gdGhlIGdpdmVuIHByb2JhYmlsaXRpZXMuIFRoZSBzbWFsbGVzdCBvYnNlcnZhdGlvbiBjb3JyZXNwb25kcyB0byBhIHByb2JhYmlsaXR5IG9mIDAgYW5kIHRoZSBsYXJnZXN0IHRvIGEgcHJvYmFiaWxpdHkgb2YgMS5fCmBgYHtyfQpxdWFudGlsZShyZXN0RGF0YSRjb3VuY2lsRGlzdHJpY3QgLCBuYS5ybT1UUlVFKQpxdWFudGlsZShyZXN0RGF0YSR6aXBDb2RlICwgbmEucm09VFJVRSkKYGBgCmBgYHtyfQpxdWFudGlsZShyZXN0RGF0YSR6aXBDb2RlLCBwcm9icz1jKDAuNSwwLjc1LDAuOSkpICNndWFyZG8gbGUgcHJvYmFiaWxpdMOgIGNoZSBtaSBpbnRlcmVzc2FubwpgYGAKIyBUYWJsZQpgYGB7cn0KdGFibGUocmVzdERhdGEkemlwQ29kZSAsIHVzZU5BPSJpZmFueSIpICNxdWFudGUgdm9sdGUgYXBwYWlvbm8gaSBudW1lcmkgbmVsbGEgdGFiZWxsYSwgYWdnaXVuZ28gdW5hIGNvbG9ubmEgc2UgY2kgc29ubyBOQSBwZXIgY29udGFybGkKYGBgCmBgYHtyfQp0YWJsZSAocmVzdERhdGEkcG9saWNlRGlzdHJpY3QsIHJlc3REYXRhJHppcENvZGUgKSAjY29udG8gcXVhbnRpIHJpc3RvcmFudGkgY2kgc29ubyBpbiB1biBkaXN0cmV0dG8gZGkgcG9saXppYSBpbiB1biBkZXRldG1pbmF0byB6aXBjb2RlCmBgYAojIENoZWNrIGZvciBtaXNzaW5nIHZhbHVlcwpgYGB7cn0Kc3VtKGlzLm5hKHJlc3REYXRhJGNvdW5jaWxEaXN0cmljdCkpICMgcmVzaXR1aXNjZSB6ZXJvIHNlIG5vbiBtYW5jYW5vIGRhdGkKIyBvcHB1cmUKYW55KGlzLm5hKHJlc3REYXRhJGNvdW5jaWxEaXN0cmljdCkpCiMgb3BwdXJlIHNlIG9nbmkgdmFsb3JlIHNvZGRpc2ZhIHVuYSBjb25kaXppb25lCmFsbChyZXN0RGF0YSR6aXBDb2RlID4gMCkKYGBgCiMgUm93IGFuZCBjb2x1bW4gc3VtcwpgYGB7cn0KY29sU3Vtcyhpcy5uYShyZXN0RGF0YSkpICNjb250YSBnbGkgTkEKYGBgCiAKYGBge3J9CmFsbChjb2xTdW1zKGlzLm5hKHJlc3REYXRhKSk9PTApICN2ZXJpZmljYSBjaGUgc29ubyB6ZXJvIGkgTmEgZGUgcXVlbGxhIGNvbG9ubmEKYGBgCiMgVmlzdWFsaXp6YSBjb24gY2FyYXRlcmlzdGljaGUgcHJlY2lzZQoK</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiV0VFSyAzIgpvdXRwdXQ6CiAgcGRmX2RvY3VtZW50OiBkZWZhdWx0CiAgaHRtbF9ub3RlYm9vazogZGVmYXVsdAotLS0KCgoKYGBge3J9CnNldC5zZWVkKDEzNDM1KQpYIDwtIGRhdGEuZnJhbWUoInZhcjEiPXNhbXBsZSgxOjUpLCAidmFyMiI9c2FtcGxlKDY6MTApLCAidmFyMyI9c2FtcGxlKDExOjE1KSkKWApgYGAKI2xlIG1pc2NoaW8gZSBpbnNlcmlzY28gZGVpIE5BCmBgYHtyfQpYIDwtIFhbc2FtcGxlKDE6NSksXQpYCgpgYGAKYGBge3J9ClgkdmFyMltjKDEsMyldID0gTkEKWApgYGAKZ3VhcmRhcmUgdW5hIGNvbG9ubmEgCmBgYHtyfQpYWywxXQpYWywidmFyMSJdCmBgYAojUmljZXJjYXJlIHNvbG8gZGV0ZXJtaW5lIGNvbG9ubmUgbyByaWdoZSBpbiBiYXNlIGEgbG9naWNoZQpgYGB7cn0KWFsoWCR2YXIxIDw9MyAmIFgkdmFyMyA+IDExKSxdCmBgYAojIFdoaWNoLCByaXRvcm5hIGdsaSBpbmRpY2kgY2hlIGFwcHJvdmFubyBkZXRlcm1pbmF0ZSBjb25kaXppb25pCmBgYHtyfQpYW3doaWNoKFgkdmFyMiA+IDgpLF0KYGBgCiMgcGVyIG9yZGluYXJlIGkgdmFsb3JpCmBgYHtyfQpzb3J0KFgkdmFyMSkgI2NyZXNjZW50ZQpzb3J0KFgkdmFyMSAsIGRlY3JlYXNpbmc9VFJVRSkKc29ydChYJHZhcjIgLCBuYS5sYXN0PVRSVUUpCgpgYGAKIyBvcmRpbmFyZSBpbCBkYXRhYnNlIGluIGJhc2UgYWkgdmFsb3JpIGRpIHVuYSBjb2xvbm5hCmBgYHtyfQpYW29yZGVyKFgkdmFyMSksXQpgYGAKIyBMaWJyZXJpYSBwbHlyCgpgYGB7cn0KbGlicmFyeShwbHlyKQphcnJhbmdlKFgsIHZhcjEpICNvcmRpbmEgaWwgZGF0YWJhc2UgcmlzcGV0dG8gYWxsYSBjb2xvbm5hCmFycmFuZ2UoWCwgZGVzYyh2YXIxKSkgI29yZGluYSBkZWNyZXNjZW50ZQpgYGAKIyBhZ2dpdW5nZXJlIHVuYSBudW92YSBjb2xvbm5hCmBgYHtyfQpYJHZhcjQgPC0gcm5vcm0oNSkKWApgYGAKYGBge3J9CiMgcG9zc28gZmFyZSBsbyBzdGVzcyBjb24gClkgPC0gY2JpbmQoWCwgcm5vcm0oNSkpClkKYGBgCgojIG1hbmlwb2xhcmUgaSBkYXRpIApgYGB7cn0KaWYoIWZpbGUuZXhpc3RzKCIuL0RhdGEiKSl7ZGlyLmNyZWF0ZSgiLi9EYXRhIil9CmZpbGVVcmwgPC0gImh0dHBzOi8vZGF0YS5iYWx0aW1vcmVjaXR5Lmdvdi9hcGkvdmlld3MvazVyeS1lZjNnL3Jvd3MuY3N2P2FjY2Vzc1R5cGU9RE9XTkxPQUQiCmRvd25sb2FkLmZpbGUoZmlsZVVybCxkZXN0ZmlsZT0iLi9EYXRhL3Jlc3RhdXJhbnRzLmNzdiIsIG1ldGhvZD0iY3VybCIpCnJlc3REYXRhIDwtIHJlYWQuY3N2KCIuL0RhdGEvcmVzdGF1cmFudHMuY3N2IikKYGBgCmBgYHtyfQpoZWFkKHJlc3REYXRhLCBuPTMpCnRhaWwocmVzdERhdGEsIG49MykKYGBgCgpgYGB7cn0Kc3VtbWFyeShyZXN0RGF0YSkKYGBgCmBgYHtyfQpzdHIocmVzdERhdGEpCmBgYAojIFF1YW50aWxlcyBvZiBxdWFudGl0YXRpdmUgdmFyaWFibGVzCl9UaGUgZ2VuZXJpYyBmdW5jdGlvbiBxdWFudGlsZSBwcm9kdWNlcyBzYW1wbGUgcXVhbnRpbGVzIGNvcnJlc3BvbmRpbmcgdG8gdGhlIGdpdmVuIHByb2JhYmlsaXRpZXMuIFRoZSBzbWFsbGVzdCBvYnNlcnZhdGlvbiBjb3JyZXNwb25kcyB0byBhIHByb2JhYmlsaXR5IG9mIDAgYW5kIHRoZSBsYXJnZXN0IHRvIGEgcHJvYmFiaWxpdHkgb2YgMS5fCmBgYHtyfQpxdWFudGlsZShyZXN0RGF0YSRjb3VuY2lsRGlzdHJpY3QgLCBuYS5ybT1UUlVFKQpxdWFudGlsZShyZXN0RGF0YSR6aXBDb2RlICwgbmEucm09VFJVRSkKYGBgCmBgYHtyfQpxdWFudGlsZShyZXN0RGF0YSR6aXBDb2RlLCBwcm9icz1jKDAuNSwwLjc1LDAuOSkpIAojZ3VhcmRvIGxlIHByb2JhYmlsaXTDoCBjaGUgbWkgaW50ZXJlc3Nhbm8KYGBgCiMgVGFibGUKYGBge3J9CnRhYmxlKHJlc3REYXRhJHppcENvZGUgLCB1c2VOQT0iaWZhbnkiKSAKI3F1YW50ZSB2b2x0ZSBhcHBhaW9ubyBpIG51bWVyaSBuZWxsYSB0YWJlbGxhLCBhZ2dpdW5nbyB1bmEgY29sb25uYSBzZSBjaSBzb25vIE5BIHBlciBjb250YXJsaQpgYGAKYGBge3J9CnRhYmxlIChyZXN0RGF0YSRwb2xpY2VEaXN0cmljdCwgcmVzdERhdGEkemlwQ29kZSApICNjb250byBxdWFudGkgcmlzdG9yYW50aSBjaSBzb25vIGluIHVuIGRpc3RyZXR0byBkaSBwb2xpemlhIGluIHVuIGRldGV0bWluYXRvIHppcGNvZGUKYGBgCiMgQ2hlY2sgZm9yIG1pc3NpbmcgdmFsdWVzCmBgYHtyfQpzdW0oaXMubmEocmVzdERhdGEkY291bmNpbERpc3RyaWN0KSkgIyByZXNpdHVpc2NlIHplcm8gc2Ugbm9uIG1hbmNhbm8gZGF0aQojIG9wcHVyZQphbnkoaXMubmEocmVzdERhdGEkY291bmNpbERpc3RyaWN0KSkKIyBvcHB1cmUgc2Ugb2duaSB2YWxvcmUgc29kZGlzZmEgdW5hIGNvbmRpemlvbmUKYWxsKHJlc3REYXRhJHppcENvZGUgPiAwKQpgYGAKIyBSb3cgYW5kIGNvbHVtbiBzdW1zCmBgYHtyfQpjb2xTdW1zKGlzLm5hKHJlc3REYXRhKSkgI2NvbnRhIGdsaSBOQQpgYGAKIApgYGB7cn0KYWxsKGNvbFN1bXMoaXMubmEocmVzdERhdGEpKT09MCkgI3ZlcmlmaWNhIGNoZSBzb25vIHplcm8gaSBOYSBkZSBxdWVsbGEgY29sb25uYQpgYGAKIyBWaXN1YWxpenphIGNvbiBjYXJhdGVyaXN0aWNoZSBwcmVjaXNlCmBgYHtyfQp0YWJsZShyZXN0RGF0YSR6aXBDb2RlICVpbiUgYygiMjEyMTIiLCAiMjEyMTMiKSkgCiNjZXJjYSBxdWFudGUgdm9sdGUgYXBwYWlvbm8gaSBkdWUgdmFsb3JpIG5lbGxhIGNvbG9ubmEKYGBgCl9zZSB2b2dsaW8gYXZlcmUgc29sbyBpIHJpc3RvcmFudGkgY29uIHF1ZWxsZSBjYXJhdHRlcnNpdGljaGVfCl9mYWNjaW8gdW4gc3Vic2V0XwpgYGB7cn0KcmVzdERhdGFbcmVzdERhdGEkemlwQ29kZSAlaW4lIGMoIjIxMjEyIiwgIjIxMjEzIiksXQpgYGAKCiMgQ3Jvc3MgdGFicwpgYGB7cn0KZGF0YSgiVUNCQWRtaXNzaW9ucyIpCmRmID0gYXMuZGF0YS5mcmFtZShVQ0JBZG1pc3Npb25zKSAjIGNyZW8gaWwgZGF0YWJhc2UKc3VtbWFyeShkZikKYGBgCl9jZXJjbyBkZWxsZSByZWxhemlvbmkgbmVpIGRhdGFfCgpgYGB7cn0KeHQgPC0geHRhYnMoRnJlcSAgfiBHZW5kZXIgKyBBZG1pdCwgZGF0YT0gZGYgICkKI2ZyZXEgw6ggbGEgdmFyaWFiaWxlIGNoZSB2b2dsaW8gZmFyIHZlZGVyZSBuZWxsYSB0YWJlbGxhCiMgZ2xpIGFsdHJlIHNvbm8gbGUgY2F0ZWdvcmllCnh0CmBgYAoKCgojIENyZWF0aW5nIHNlcXVlbmNlcwoKYGBge3J9CnMxIDwtIHNlcSgxLDEwLGJ5PTIpOyBzMQpzMiA8LSBzZXEoMSwxMCxsZW5ndGg9Myk7IHMyCmBgYAoKIyBTdWJzZXR0aW5nIHZhcmlhYmxlcwoKYGBge3J9CnJlc3REYXRhJG5lYXJtZSA9IHJlc3REYXRhJG5laWdoYm9yaG9vZCAlaW4lIGMoIlJvbGFuZCBQYXJrIiwgIkhvbWVsYW5kIikKdGFibGUocmVzdERhdGEkbmVhcm1lKQojY2VyY28gdHV0dGkgaSByaXN0b3JhbnRpIGNoZSBjaSB0cm92YW5vIHZpY2lubyBhIFJvbGFuZCBlIEhvbWVsYW5kCmBgYAoKIyBDcmVhdGluZyBiaW5hcnkgdmFyaWFibGVzCmBgYHtyfQpyZXN0RGF0YSR6aXBXcm9uZyA9IGlmZWxzZShyZXN0RGF0YSR6aXBDb2RlIDwgMCwgVFJVRSwgRkFMU0UpCnRhYmxlKHJlc3REYXRhJHppcFdyb25nLCByZXN0RGF0YSR6aXBDb2RlIDwgMCkKYGBgCgojIENyZWF0aW5nIGZhY3RvciB2YXJpYWJsZXMgCmBgYHtyfQpyZXN0RGF0YSR6Y2YgPC0gZmFjdG9yKHJlc3REYXRhJHppcENvZGUpCiNjcmVhIGRlaSBsaXZlbGxpCnJlc3REYXRhJHpjZlsxOjNdCmBgYAoKYGBge3J9CmNsYXNzKHJlc3REYXRhJHpjZikjIGd1YXJkbyBkaSBjaGUgY2xhc3NlIMOoCmBgYAoKIyBMZXZlbHMgb2YgZmFjdG9yIHZhcmlhYmxlcwpgYGB7cn0KeWVzbm8gPC0gc2FtcGxlKGMoInllcyIsIm5vIiksIHNpemUgPSAxMCwgcmVwbGFjZT1UUlVFKQp5ZXNub2ZhYyA9IGZhY3Rvcih5ZXNubywgbGV2ZWxzPWMoInllcyIsIm5vIikpCnJlbGV2ZWwoeWVzbm9mYWMsIHJlZj0ieWVzIikKYGBgCgo=</div>
 
 
 
