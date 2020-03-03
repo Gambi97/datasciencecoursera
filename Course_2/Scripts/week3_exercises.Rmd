@@ -1,0 +1,115 @@
+---
+title: "WEEK 3"
+output: html_notebook
+---
+
+
+
+```{r}
+set.seed(13435)
+X <- data.frame("var1"=sample(1:5), "var2"=sample(6:10), "var3"=sample(11:15))
+X
+```
+#le mischio e inserisco dei NA
+```{r}
+X <- X[sample(1:5),]
+X
+
+```
+```{r}
+X$var2[c(1,3)] = NA
+X
+```
+guardare una colonna 
+```{r}
+X[,1]
+X[,"var1"]
+```
+#Ricercare solo determine colonne o righe in base a logiche
+```{r}
+X[(X$var1 <=3 & X$var3 > 11),]
+```
+# Which, ritorna gli indici che approvano determinate condizioni
+```{r}
+X[which(X$var2 > 8),]
+```
+# per ordinare i valori
+```{r}
+sort(X$var1) #crescente
+sort(X$var1 , decreasing=TRUE)
+sort(X$var2 , na.last=TRUE)
+
+```
+# ordinare il databse in base ai valori di una colonna
+```{r}
+X[order(X$var1),]
+```
+# Libreria plyr
+
+```{r}
+arrange(X, var1) #ordina il database rispetto alla colonna
+arrange(X, desc(var1)) #ordina decrescente
+```
+# aggiungere una nuova colonna
+```{r}
+X$var4 <- rnorm(5)
+X
+```
+```{r}
+# posso fare lo stess con 
+Y <- cbind(X, rnorm(5))
+Y
+```
+
+# manipolare i dati 
+```{r}
+if(!file.exists("./Data")){dir.create("./Data")}
+fileUrl <- "https://data.baltimorecity.gov/api/views/k5ry-ef3g/rows.csv?accessType=DOWNLOAD"
+download.file(fileUrl,destfile="./Data/restaurants.csv", method="curl")
+restData <- read.csv("./Data/restaurants.csv")
+```
+```{r}
+head(restData, n=3)
+tail(restData, n=3)
+```
+
+```{r}
+summary(restData)
+```
+```{r}
+str(restData)
+```
+# Quantiles of quantitative variables
+_The generic function quantile produces sample quantiles corresponding to the given probabilities. The smallest observation corresponds to a probability of 0 and the largest to a probability of 1._
+```{r}
+quantile(restData$councilDistrict , na.rm=TRUE)
+quantile(restData$zipCode , na.rm=TRUE)
+```
+```{r}
+quantile(restData$zipCode, probs=c(0.5,0.75,0.9)) #guardo le probabilità che mi interessano
+```
+# Table
+```{r}
+table(restData$zipCode , useNA="ifany") #quante volte appaiono i numeri nella tabella, aggiungo una colonna se ci sono NA per contarli
+```
+```{r}
+table (restData$policeDistrict, restData$zipCode ) #conto quanti ristoranti ci sono in un distretto di polizia in un detetminato zipcode
+```
+# Check for missing values
+```{r}
+sum(is.na(restData$councilDistrict)) # resituisce zero se non mancano dati
+# oppure
+any(is.na(restData$councilDistrict))
+# oppure se ogni valore soddisfa una condizione
+all(restData$zipCode > 0)
+```
+# Row and column sums
+```{r}
+colSums(is.na(restData)) #conta gli NA
+```
+ 
+```{r}
+all(colSums(is.na(restData))==0) #verifica che sono zero i Na de quella colonna
+```
+# Visualizza con carateristiche precise
+

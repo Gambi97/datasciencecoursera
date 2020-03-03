@@ -4,6 +4,7 @@ pollutantmean <- function(directory, pollutant, id = i:332){
     
     # inizializzo a 0 un vettore che conterrà gli inquinanti
     pollutants= c()
+    
     # Ottengo la lista dei nomi dei file cvs
     filenames = list.files(directory)
     
@@ -33,7 +34,7 @@ pollutantmean <- function(directory, pollutant, id = i:332){
 
 # Test
 pollutantmean('/home/matteo/Scrivania/datasciencecoursera/Course_2/Data/specdata', "nitrate", 1:332)
-pollutantmean('/home/matteo/Scrivania/datasciencecoursera/Course_2/Data/specdata', "sulfate", 1:332)
+pollutantmean('/home/matteo/Scrivania/datasciencecoursera/Course_2/Data/specdata', "sulfate", 34)
 
 
 
