@@ -1,6 +1,8 @@
 ---
 title: "WEEK 3"
-output: html_notebook
+output:
+  pdf_document: default
+  html_notebook: default
 ---
 
 
@@ -47,6 +49,7 @@ X[order(X$var1),]
 # Libreria plyr
 
 ```{r}
+library(plyr)
 arrange(X, var1) #ordina il database rispetto alla colonna
 arrange(X, desc(var1)) #ordina decrescente
 ```
