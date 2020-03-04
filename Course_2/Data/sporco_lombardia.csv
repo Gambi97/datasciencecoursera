@@ -1,0 +1,616 @@
+Anno,Macro_categoria_rifiuti,Categoria_rifiuti,ID_Categoria_rifiuti,Modalità_raccolta,Periodo,Quantità
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,1,34140
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,1,0
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,1,304
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,1,32520
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,1,74750
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,1,1940
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,1,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,1,82080
+2018,Differenziata,umido,200108,Porta a porta,1,126970
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,1,251
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,1,2380
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,1,540
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,1,0
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,1,2290
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,1,220
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,1,300
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,1,1285
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,1,3340
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,1,57180
+2018,Differenziata,metalli,200140,Area Attrezzata,1,11940
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,1,29520
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,1,13440
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,1,75440
+2018,Indifferenziata,Secco,200301,Porta a porta,1,135840
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,2,52440
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,2,0
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,2,128
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,2,33320
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,2,60090
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,2,0
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,2,20
+2018,Differenziata,carta e cartone,200101,Porta a porta,2,63500
+2018,Differenziata,umido,200108,Porta a porta,2,104560
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,2,0
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,2,0
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,2,0
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,2,700
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,2,647
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,2,0
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,2,0
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,2,1540
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,2,0
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,2,44420
+2018,Differenziata,metalli,200140,Area Attrezzata,2,11680
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,2,36840
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,2,5140
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,2,62700
+2018,Indifferenziata,Secco,200301,Porta a porta,2,86940
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,3,55680
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,3,0
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,3,0
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,3,43840
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,3,72880
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,3,2260
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,3,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,3,69780
+2018,Differenziata,umido,200108,Porta a porta,3,114820
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,3,185
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,3,3200
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,3,480
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,3,0
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,3,0
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,3,370
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,3,155
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,3,640
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,3,3760
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,3,68220
+2018,Differenziata,metalli,200140,Area Attrezzata,3,12900
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,3,46790
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,3,23880
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,3,76660
+2018,Indifferenziata,Secco,200301,Porta a porta,3,101260
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,4,31340
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,4,0
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,4,0
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,4,40540
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,4,65960
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,4,0
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,4,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,4,55220
+2018,Differenziata,umido,200108,Porta a porta,4,102360
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,4,0
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,4,0
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,4,0
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,4,0
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,4,0
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,4,0
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,4,205
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,4,0
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,4,0
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,4,58400
+2018,Differenziata,metalli,200140,Area Attrezzata,4,14980
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,4,95940
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,4,17840
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,4,76240
+2018,Indifferenziata,Secco,200301,Porta a porta,4,102600
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,5,95760
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,5,0
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,5,302
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,5,36280
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,5,70770
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,5,2360
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,5,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,5,78600
+2018,Differenziata,umido,200108,Porta a porta,5,121480
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,5,0
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,5,1540
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,5,800
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,5,0
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,5,3580
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,5,0
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,5,0
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,5,1575
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,5,3820
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,5,63060
+2018,Differenziata,metalli,200140,Area Attrezzata,5,17500
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,5,111140
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,5,17580
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,5,72380
+2018,Indifferenziata,Secco,200301,Porta a porta,5,103160
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,6,69680
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,6,28500
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,6,213
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,6,45200
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,6,69460
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,6,2380
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,6,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,6,50160
+2018,Differenziata,umido,200108,Porta a porta,6,123210
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,6,0
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,6,1480
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,6,0
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,6,0
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,6,1723
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,6,137
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,6,202
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,6,1973
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,6,860
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,6,64000
+2018,Differenziata,metalli,200140,Area Attrezzata,6,10760
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,6,110440
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,6,30280
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,6,66240
+2018,Indifferenziata,Secco,200301,Porta a porta,6,90500
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,7,63780
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,7,60610
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,7,0
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,7,36480
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,7,61300
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,7,0
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,7,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,7,69960
+2018,Differenziata,umido,200108,Porta a porta,7,121810
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,7,232
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,7,1440
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,7,710
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,7,500
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,7,2243
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,7,278
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,7,109
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,7,1650
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,7,3500
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,7,66580
+2018,Differenziata,metalli,200140,Area Attrezzata,7,15460
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,7,74500
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,7,8160
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,7,79760
+2018,Indifferenziata,Secco,200301,Porta a porta,7,105620
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,8,37480
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,8,30990
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,8,0
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,8,38540
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,8,78300
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,8,2280
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,8,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,8,66620
+2018,Differenziata,umido,200108,Porta a porta,8,101470
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,8,0
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,8,1180
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,8,300
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,8,500
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,8,972
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,8,143
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,8,62
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,8,787
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,8,0
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,8,76740
+2018,Differenziata,metalli,200140,Area Attrezzata,8,12100
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,8,87710
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,8,12920
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,8,73240
+2018,Indifferenziata,Secco,200301,Porta a porta,8,70840
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,9,54680
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,9,9920
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,9,234
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,9,36960
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,9,50560
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,9,0
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,9,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,9,66740
+2018,Differenziata,umido,200108,Porta a porta,9,117080
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,9,0
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,9,1750
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,9,400
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,9,1000
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,9,3203
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,9,330
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,9,176
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,9,1760
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,9,4600
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,9,59340
+2018,Differenziata,metalli,200140,Area Attrezzata,9,12260
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,9,80620
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,9,25780
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,9,62100
+2018,Indifferenziata,Secco,200301,Porta a porta,9,82940
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,10,48360
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,10,0
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,10,0
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,10,35100
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,10,75570
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,10,0
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,10,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,10,80220
+2018,Differenziata,umido,200108,Porta a porta,10,112950
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,10,0
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,10,1750
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,10,450
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,10,0
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,10,0
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,10,0
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,10,0
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,10,1610
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,10,0
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,10,70200
+2018,Differenziata,metalli,200140,Area Attrezzata,10,12020
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,10,60290
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,10,25120
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,10,74360
+2018,Indifferenziata,Secco,200301,Porta a porta,10,104040
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,11,31620
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,11,29080
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,11,263
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,11,43680
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,11,58000
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,11,2420
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,11,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,11,61720
+2018,Differenziata,umido,200108,Porta a porta,11,102420
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,11,0
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,11,1350
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,11,475
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,11,500
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,11,2748
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,11,421
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,11,229
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,11,0
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,11,0
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,11,60180
+2018,Differenziata,metalli,200140,Area Attrezzata,11,16540
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,11,65330
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,11,34620
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,11,61180
+2018,Indifferenziata,Secco,200301,Porta a porta,11,98440
+2018,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,12,28340
+2018,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,12,0
+2018,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,12,0
+2018,Differenziata,imballaggi di plastica,150102,Porta a porta,12,36020
+2018,Differenziata,imballaggi di vetro,150107,Porta a porta,12,60240
+2018,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,12,1320
+2018,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,12,0
+2018,Differenziata,carta e cartone,200101,Porta a porta,12,63320
+2018,Differenziata,umido,200108,Porta a porta,12,128100
+2018,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,12,245
+2018,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,12,0
+2018,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,12,0
+2018,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,12,0
+2018,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,12,855
+2018,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,12,149
+2018,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,12,0
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,12,930
+2018,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,12,4760
+2018,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,12,54820
+2018,Differenziata,metalli,200140,Area Attrezzata,12,8640
+2018,Differenziata,verde e sfalci,200201,Area Attrezzata,12,40000
+2018,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,12,19040
+2018,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,12,58480
+2018,Indifferenziata,Secco,200301,Porta a porta,12,99820
+2019,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,1,48660
+2019,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,1,44000
+2019,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,1,222
+2019,Differenziata,imballaggi di plastica,150102,Porta a porta,1,34500
+2019,Differenziata,imballaggi di vetro,150107,Porta a porta,1,96610
+2019,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,1,0
+2019,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,1,0
+2019,Differenziata,carta e cartone,200101,Porta a porta,1,78840
+2019,Differenziata,umido,200108,Porta a porta,1,109970
+2019,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,1,0
+2019,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,1,1250
+2019,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,1,0
+2019,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,1,500
+2019,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,1,1709
+2019,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,1,321
+2019,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,1,0
+2019,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,1,1730
+2019,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,1,0
+2019,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,1,41400
+2019,Differenziata,metalli,200140,Area Attrezzata,1,10940
+2019,Differenziata,verde e sfalci,200201,Area Attrezzata,1,22610
+2019,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,1,16040
+2019,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,1,62780
+2019,Indifferenziata,Secco,200301,Porta a porta,1,88720
+2019,Rifiuti da costruzioni e demolizioni,"rifiuti misti dell'attivita' di costruzione e demolizione, diversi da quelli di cui alle voci 17 09 01, 17 09 02 e 17 09 03",170904,Area Attrezzata,2,37100
+2019,Pulizia Pozzetti stradali,rifiuti prodotti dalla pulizia delle acque di scarico,200306,Pulizia Pozzetti stradali,2,0
+2019,Differenziata,"toner per stampa esauriti, diversi da quelli di cui alla voce 08 03 17",80318,Area Attrezzata,2,0
+2019,Differenziata,imballaggi di plastica,150102,Porta a porta,2,34400
+2019,Differenziata,imballaggi di vetro,150107,Porta a porta,2,52120
+2019,Differenziata,pneumatici fuori uso,160103,Area Attrezzata,2,2380
+2019,Differenziata,rifiuti che devono essere raccolti e smaltiti applicando precauzioni particolari per evitare infezioni,180103,Area Attrezzata,2,0
+2019,Differenziata,carta e cartone,200101,Porta a porta,2,59520
+2019,Differenziata,umido,200108,Porta a porta,2,114820
+2019,Differenziata,tubi fluorescenti ed altri rifiuti contenenti mercurio,200121,Area Attrezzata,2,189
+2019,Differenziata,apparecchiature fuori uso contenenti clorofluorocarburi,200123,Area Attrezzata,2,1410
+2019,Differenziata,oli e grassi commestibili,200125,Area Attrezzata,2,600
+2019,Differenziata,oli e grassi diversi da quelli di cui alla voce 20 01 25,200126,Area Attrezzata,2,500
+2019,Differenziata,"vernici, inchiostri, adesivi e resine contenenti sostanze pericolose",200127,Area Attrezzata,2,996
+2019,Differenziata,medicinali citotossici e citostatici,200131,Area Attrezzata,2,99
+2019,Differenziata,"batterie e accumulatori di cui alle voci 16 06 01, 16 06 02 e 16 06 03, nonche' batterie e accumulatori non suddivisi contenenti tali batterie",200133,Area Attrezzata,2,250
+2019,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alla voce 20 01 21 e 20 01 23, contenenti componenti pericolosi",200135,Area Attrezzata,2,1325
+2019,Differenziata,"apparecchiature elettriche ed elettroniche fuori uso, diverse da quelle di cui alle voci 20 01 21, 20 01 23 e 20 01 35",200136,Area Attrezzata,2,4380
+2019,Differenziata,legno diverso da quello di cui alla voce 20 01 37,200138,Area Attrezzata,2,45360
+2019,Differenziata,metalli,200140,Area Attrezzata,2,7000
+2019,Differenziata,verde e sfalci,200201,Area Attrezzata,2,29180
+2019,Differenziata,residui della pulizia stradale,200303,Area Attrezzata,2,21900
+2019,Differenziata,rifiuti ingombranti,200307,Area Attrezzata,2,54240
+2019,Indifferenziata,Secco,200301,Porta a porta,2,84040
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,
+2019,,,,,,

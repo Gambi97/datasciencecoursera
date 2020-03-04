@@ -1,0 +1,87 @@
+---
+title: "Week 4"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+# Fixing character vectors
+
+```{r}
+if(!file.exists("./Data")){dir.create("./Data")}
+fileUrl <- "https://data.baltimorecity.gov/api/views/dz54-2aru/rows.csv?accessType=DOWNLOAD"
+download.file(fileUrl,destfile="./Data/cameras.csv", method="curl")
+cameraData <- read.csv("./Data/cameras.csv")
+```
+
+```{r}
+names(cameraData)
+```
+
+# tolower() toupper()
+
+```{r}
+tolower(names(cameraData)) #rendo minuscole le lettere
+
+```
+```{r}
+toupper(names(cameraData)) #rendo maiuscole le lettere
+```
+# strsplit 
+```{r}
+splitNames <- strsplit(names(cameraData), "\\.")#tolgo il punto dal nome
+splitNames[[6]]
+```
+# List
+```{r}
+myList <- list(letters = c("A", "b", "c"), numbers = 1:3 , matrix(1:25, ncol=5))
+head(myList)
+```
+```{r}
+myList[1]; myList$letters ; myList[[1]]
+```
+
+# Sapplay
+
+```{r}
+splitNames[[6]][1];splitNames[[6]][2] 
+```
+_Posso creare una funzione che mi restituisca solo il primo elemento di un vettore es("location","1")>("location")_
+```{r}
+firstelement <- function(x){x[1]}
+sapply(splitNames, firstelement)
+```
+
+#sub
+_per sosituire una cosa_
+```{r}
+names(cameraData)
+sub("[.]","",names(cameraData))
+sub("X","",names(cameraData))
+```
+
+# Regular expression
+_cercare parole o lettere in testi_
+
+
+# Date class
+```{r}
+d2 = Sys.Date()
+d2
+d1 = date()
+d1
+```
+
+# Formatting dates
+```{r}
+format(d2,"%a %b %d")
+```
+ 
+# Creating Dates
+```{r}
+x = c("1gen1960","2gen1960"); z=as.Date(x,"%d%b%Y")
+z
+z[1]-z[2]
+as.numeric(z[1]-z[2])
+```
+
