@@ -1,0 +1,43 @@
+---
+title: "Week 1"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+```{r}
+library(datasets)
+data(cars)
+with(cars,plot(speed,dist))
+```
+```{r}
+x <- rnorm(100)
+hist(x)
+```
+```{r}
+y <- rnorm(100)
+plot(x,y)
+par(mar = c(2,2,2,2))
+#cambio le dim dei margini attorno alla figura
+plot(x,y)
+#se voglio cambiare la tipologia dei punti
+plot(x,y, pch = 2)
+#se voglio un tabella con comandi 
+#example(points)
+plot(x,y, pch = 5)
+title("titolo") #aggiungere titolo
+text(-2,-2,"parola")#agiiungere testo in una posiz
+legend("topleft", legend= "DATA", pch = 5)
+```
+```{r}
+#se voglio aggiungere una linea
+plot(x,y)
+fit <- lm(y ~ x)
+abline(fit, lwd = 3, col="blue")# larghezza
+```
+
+```{r}
+plot(x,y, xlab="c", ylab="d", main="name")
+```
+

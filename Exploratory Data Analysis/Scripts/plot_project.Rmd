@@ -1,0 +1,89 @@
+---
+title: "Eletric power consumption"
+author: "Matteo Gambera"
+output:
+  pdf_document: default
+  html_notebook: default
+---
+
+
+
+```{r}
+url <- "https://d396qusza40orc.cloudfront.net/exdata%2Fdata%2Fhousehold_power_consumption.zip"
+download.file(url, "/home/matteo/Scrivania/datasciencecoursera/Exploratory Data Analysis/Data/dataFiles.zip")
+setwd("/home/matteo/Scrivania/datasciencecoursera/Exploratory Data Analysis/Data")
+path = "/home/matteo/Scrivania/datasciencecoursera/Exploratory Data Analysis/Data"
+unzip(zipfile = "dataFiles.zip")
+```
+```{r}
+powerData <- read.table(file.path(path, "household_power_consumption.txt"), sep=";", header=TRUE,na.strings = "?", colClasses = c('character','character','numeric','numeric','numeric','numeric','numeric','numeric','numeric'))
+head(powerData)
+```
+
+```{r}
+colnames(powerData)[1:9] <- c("Date", "Time", "Active_power", "Reactive_power", "Voltage", "Intensity", "type1", "type2", "type3")
+#powerData <- powerData[2:nrow(powerData),]
+str(powerData)
+head(powerData)
+tail(powerData)
+```
+```{r}
+powerData$Date <-as.Date(powerData$Date, "%d/%m/%Y")
+str(powerData)
+
+```
+```{r}
+t <- subset(powerData,Date >= as.Date("2007-2-1") & Date <= as.Date("2007-2-2"))
+```
+
+```{r}
+## Remove incomplete observation
+t <- t[complete.cases(t),]
+## Combine Date and Time column
+dateTime <- paste(t$Date, t$Time)
+## Name the vector
+dateTime <- setNames(dateTime, "DateTime")
+## Remove Date and Time column
+t <- t[ ,!(names(t) %in% c("Date","Time"))]
+## Add DateTime column
+t <- cbind(dateTime, t)
+## Format dateTime Column
+t$dateTime <- as.POSIXct(dateTime)
+```
+```{r}
+ hist(t$Active_power, main="Global Active Power", xlab = "Global Active Power (kilowatts)", col="red")
+```
+
+```{r}
+plot(t$Active_power~t$dateTime, type="l", ylab="Global Active Power (kilowatts)", xlab="")
+```
+
+```{r}
+  with(t, {
+    plot(type1~dateTime, type="l",
+         ylab="Global Active Power (kilowatts)", xlab="")
+    lines(type2~dateTime,col='Red')
+    lines(type3~dateTime,col='Blue')
+  })
+  legend("topright", col=c("black", "red", "blue"), lwd=c(1,1,1), 
+         c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+```
+
+```{r}
+par(mfrow=c(2,2), mar=c(4,4,2,1), oma=c(0,0,2,0))
+  with(t, {
+    plot(Active_power~dateTime, type="l", 
+         ylab="Global Active Power (kilowatts)", xlab="")
+    plot(Voltage~dateTime, type="l", 
+         ylab="Voltage (volt)", xlab="")
+    plot(type1~dateTime, type="l", 
+         ylab="Global Active Power (kilowatts)", xlab="")
+    lines(type2~dateTime,col='Red')
+    lines(type3~dateTime,col='Blue')
+    legend("topright", col=c("black", "red", "blue"), lty=1, lwd=2, bty="n",
+           legend=c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"))
+    plot(Reactive_power~dateTime, type="l", 
+         ylab="Global Rective Power (kilowatts)",xlab="")
+  })
+```
+
