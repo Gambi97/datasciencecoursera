@@ -1,0 +1,127 @@
+---
+title: "Italia COVID-19"
+author: "Matteo Gambera"
+output:
+  word_document: default
+  html_notebook: default
+  pdf_document: default
+  html_document:
+    df_print: paged
+---
+
+```{r}
+fileurl <- "https://www.ecdc.europa.eu/sites/default/files/documents/COVID-19-geographic-disbtribution-worldwide-2020-03-09.xls"
+download.file(fileurl,destfile="./covid.xls", method="curl")
+library(readxl)
+covid <- read_xls("covid.xls")
+str(covid)
+head(covid, n=1)
+```
+_estraggo solo l'italia_
+```{r}
+#cancello due colonne che non servono
+italia <- covid[,c(1,2,3,4)] 
+mondo <- covid[,c(1,2,3,4)]
+
+#Definisco l'inizio del dataset
+Data_inizio <- "2020-01-01"
+italia <- subset(italia , CountryExp == "Italy" & DateRep >= Data_inizio )
+mondo <- subset(mondo, DateRep >= Data_inizio)
+
+#inverto ordine tabella in base ai giorni
+italia <- italia[order(as.Date(italia$DateRep, format="%d/%m/%Y")),]
+italia$id <- 1:nrow(italia)
+italia <- italia[,c(5,1,3,4)]
+mondo <- mondo[order(as.Date(mondo$DateRep, format="%d/%m/%Y")),]
+```
+
+```{r}
+mondo <- mondo[,c(1,3,4)]
+date_factor <- factor(mondo$DateRep)
+mondo <- aggregate(.~ mondo$DateRep, mondo, sum)
+mondo$id <- 1:nrow(mondo)
+mondo <- mondo[,c(5,1,3,4)]
+names(mondo)[2] <- "DateRep"
+str(mondo)
+```
+
+```{r}
+#ricreo le due colonne mettendone la cumulata
+italia$TotCases <- cumsum(italia$NewConfCases)
+italia$TotDeaths <- cumsum(italia$NewDeaths)
+mondo$TotCases <- cumsum(mondo$NewConfCases)
+mondo$TotDeaths <- cumsum(mondo$NewDeaths)
+```
+
+```{r}
+library(ggplot2)
+library(ggpubr)
+pitalia <-ggplot(italia, aes(DateRep)) + 
+    geom_area(aes(y=TotCases),fill = "orange") +
+    geom_area(aes(y=TotDeaths),fill = "red") + 
+    ggtitle("COVID-19 ITALIA") +
+    xlab("Data")+ 
+    ylab("Casi")
+
+
+pmondo <-ggplot(mondo, aes(DateRep)) + 
+    geom_area(aes(y=TotCases),fill = "orange") +
+    geom_area(aes(y=TotDeaths),fill = "red") +
+    ggtitle("COVID-19 MONDO") +
+    xlab("Data")+ 
+    ylab("Casi")
+
+ggarrange(pitalia, pmondo, nrow = 1 , ncol=2)
+```
+# %Mortalità
+```{r}
+M_italia <- (italia$TotDeaths)/(italia$TotCases)*100
+#fitm_italia <- lm(M_italia ~ italia$DateRep)
+M_mondo <- (mondo$TotDeaths)/(mondo$TotCases)*100
+#fitm_mondo <- lm(M_mondo ~ mondo$DateRep)
+
+```
+
+```{r}
+library(ggplot2)
+confronto <- ggplot()+
+     geom_line(data = italia, aes(x = italia$DateRep, y = M_italia), color = "blue", na.rm = TRUE) +
+     geom_line(data = mondo, aes(x = mondo$DateRep, y = M_mondo), color = "red",na.rm = TRUE) +
+     geom_smooth(data = italia, aes(x = italia$DateRep, y = M_italia),method = glm, se = FALSE, na.rm=TRUE , size=0.5)+
+     geom_smooth(data =mondo ,aes(x = mondo$DateRep, y = M_mondo),method = glm, se = FALSE, na.rm=TRUE , color="orange",size=0.5)+
+     xlab('Data') +
+     ylab('Mortalità[%]')+
+     ggtitle("Confronto mortalità")
+print(confronto)
+
+
+
+```
+
+```{r}
+ggplot()+
+    geom_line(data = italia, aes(x = italia$DateRep, y = italia$NewConfCases), color = "blue", na.rm = TRUE) 
+approssimazione <- approxfun(italia$id,italia$TotCases,method = "linear")
+plot(italia$DateRep,approssimazione(italia$id))
+deriv(approsimazione,"")
+```
+```{r}
+library(polynom)
+napp<-approssimazione(italia$id)
+nid<-italia$id
+poly <-poly.calc(italia$id,approssimazione(italia$id),tol = sqrt(.Machine$double.eps))
+dxpoly <-deriv(poly)
+plot(italia$id,poly(italia$id))
+plot(italia$id,dxpoly(italia$id))
+
+
+```
+ 
+
+
+
+```{r}
+
+
+```
+
