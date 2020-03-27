@@ -1,0 +1,106 @@
+---
+title: "Assignament2"
+author: "Matteo Gambera"
+date: "25 marzo 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Now in the second portion of the project, we’re going to analyze the ToothGrowth data in the R datasets package.
+
+1. Load the ToothGrowth data and perform some basic exploratory data analyses
+2. Provide a basic summary of the data.
+3. Use confidence intervals and/or hypothesis tests to compare tooth growth by supp and dose. (Only use the techniques from class, even if there’s other approaches worth considering)
+4. State your conclusions and the assumptions needed for your conclusions.
+```{r}
+library(ggplot2)
+library(plyr)
+library(datasets)
+library(grid)
+```
+1. Load the ToothGrowth data and perform some basic exploratory data analyses
+```{r}
+data(ToothGrowth)
+str(ToothGrowth)
+head(ToothGrowth, n=3)
+```
+2. Provide a basic summary of the data.
+```{r}
+summary(ToothGrowth)
+```
+```{r}
+tapply(ToothGrowth$len,ToothGrowth$supp, mean)
+```
+3. Use confidence intervals and/or hypothesis tests to compare tooth growth by supp and dose. (Only use the techniques from class, even if there’s other approaches worth considering)
+```{r}
+dfTooth <- data.frame(ToothGrowth)
+dfTooth$supp <- factor(dfTooth$supp)
+dfTooth$dose <- factor(dfTooth$dose)
+p1 <- ggplot(dfTooth, aes(x=supp, y=len)) + 
+        geom_boxplot(aes(fill=supp))
+p2 <- ggplot(dfTooth, aes(x=len, fill=dose)) + 
+        geom_density(alpha = 0.5)
+pushViewport(viewport(layout = grid.layout(1, 2)))
+print(p1, vp = viewport(layout.pos.row = 1, layout.pos.col = 1))
+print(p2, vp = viewport(layout.pos.row = 1, layout.pos.col = 2))
+```
+
+```{r}
+dfTooth$suppdose <- interaction(dfTooth$supp, dfTooth$dose)
+
+ggplot(aes(y=len, x = suppdose), data = dfTooth) + geom_boxplot(aes(fill=suppdose))
+```
+
+```{r}
+t1 <- t.test(len~supp, paired=F, var.equal=F, data=dfTooth)
+t1.summary <- data.frame("p-value"=c(t1$p.value),"CI-Lower"=c(t1$conf[1]), "CI-Upper"=c(t1$conf[2]), 
+     row.names=c("OJ vs. VC:  "))
+round(t1.summary,4)
+```
+```{r}
+df05 <- subset(dfTooth, dfTooth$dose==.5);df10 <- subset(dfTooth, dfTooth$dose==1)
+df20 <- subset(dfTooth, dfTooth$dose==2)
+
+t0510<- t.test(df05$len, df10$len, paired=F, var.equal=F);t0520<- t.test(df05$len, df20$len, paired=F, var.equal=F)
+t1020<- t.test(df10$len, df20$len, paired=F, var.equal=F)
+
+t2.summary <- data.frame("p-value"=c(t0510$p.value,t0520$p.value,t1020$p.value), 
+     "CI-Lower"=c(t0510$conf[1],t0520$conf[1],t1020$conf[1]),
+     "CI-Upper"=c(t0510$conf[2],t0520$conf[2],t1020$conf[2]),
+     row.names=c(".5mg vs 1mg: ", ".5mg vs 2mg: ","1mg vs 2mg: "))
+
+round(t2.summary, 6)
+```
+
+```{r}
+t05 <- t.test(len~supp, paired=F, var.equal=F, data=df05)
+t10 <- t.test(len~supp, paired=F, var.equal=F, data=df10)
+t20 <- t.test(len~supp, paired=F, var.equal=F, data=df20)
+
+t3.summary <- data.frame("p-value"=c(t05$p.value,t10$p.value,t20$p.value), 
+     "CI-Lower"=c(t05$conf[1],t10$conf[1],t20$conf[1]),
+     "CI-Upper"=c(t05$conf[2],t10$conf[2],t20$conf[2]),
+     row.names=c(".5mg OJ vs. VC: ", "1mg OJ vs. VC: ","2mg OJ vs. VC: "))
+
+round(t3.summary, 6)
+```
+
+# Conclusions
+There appears to be no difference in supplement as the p-value was .061 and the confidence interval contained zero.
+Appearances of no difference in supplement is false when looking at the dosage groups. For both .5mg and 1mg groups, a p-value of .006 and .001 respectively was obtained and both confidence intervals did not contain zero. For 2mg, there was no difference in supplement. So, for lower dosages (.5mg, 1mg) the delivery mechanism of choice is OJ.
+It was very apparent that higher dosages had a significant effect. In all cases, p-values were incredible small and no confidence interval contained zero.
+
+
+
+
+
+
+
+
+
+
+
+
