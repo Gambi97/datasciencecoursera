@@ -1,0 +1,27 @@
+Presentation
+========================================================
+author: Matteo Gambera
+date: 12/04/2020
+autosize: true
+
+First Slide
+========================================================
+
+Create a web page presentation using R Markdown that features a plot created with Plotly. Host your webpage on either GitHub Pages, RPubs, or NeoCities. Your webpage must contain the date that you created the document, and it must contain a plot created with Plotly. We would love to see you show off your creativity!
+
+Slide With Code
+========================================================
+
+
+```r
+library(ggplot2)
+library(plotly)
+p <- plot_ly( x = economics$pop , y = economics$unemploy )
+## I have problem with plotly so this is the code for plotly, but i plot a normal plot
+## excuse me 
+```
+
+Slide With Plot
+========================================================
+
+![plot of chunk unnamed-chunk-2](Presentation-figure/unnamed-chunk-2-1.png)

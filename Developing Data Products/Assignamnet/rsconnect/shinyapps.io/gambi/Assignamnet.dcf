@@ -1,0 +1,12 @@
+name: Assignamnet
+title: Assignamnet
+username:
+account: gambi
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 2113754
+bundleId: 3010879
+url: https://gambi.shinyapps.io/Assignamnet/
+when: 1586857875.34511
+asMultiple: FALSE
+asStatic: FALSE
