@@ -1,0 +1,135 @@
+---
+title: "Machine Learning"
+author: "Matteo Gambera"
+date: "1 aprile 2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+# What is a prediction
+```{r}
+library(kernlab)
+data(spam)
+str(spam)
+```
+Quante volte appare "your" in una email
+```{r}
+## Quante volte appare in una email non spam
+plot(density(spam$your[spam$type == "nonspam"]),
+     col = "blue", main = "" , xlab = "Frequenza di 'your'")
+## Quante volte appare in una email spam
+lines(density(spam$your[spam$type == "spam"]),
+     col = "red")
+## Aggiungo cutoff guardando immagine
+abline(v=0.5, col = "green")
+```
+Scrivo un algoritmo per tagliare, se il numero di volte che appare your è maggiore di C
+Scelgo C guardando immagine
+
+```{r}
+cutoff <- 0.5
+prediction <- ifelse(spam$your > cutoff, "spam", "nonspam")
+## E' un arrey con spam o non spam
+## Comparo i risultati dell'algoritmo con quelli veri
+confronto <- table(prediction, spam$type)/length(spam$type)
+confronto
+```
+```{r}
+## L'accuratezza è data dalla somma dei numeri sulla diagonale
+accuratezza <- (confronto[1] + confronto[4])*100
+paste0(round(accuratezza,1),"%")
+```
+# Relative importance of steps
+question > input data > features > algorithm > parameters > evaluation
+
+
+# In sample and out of sample
+in sample erro: errore che commetti su dati utilizzati anche per costruire il modello
+out of sample error: errore che commetti su nuovi dati
+
+```{r}
+set.seed(1)
+## Prendo 10 email
+smallspam <- spam[sample(dim(spam)[1],size=10),] 
+## Li faccio diventare 1 e 2 in base alla tipologia
+spamlabel <- (smallspam$type == "spam")*1 +1 
+plot(smallspam$capitalAve, col = spamlabel)
+abline(h = 1.6 , col = "green")
+```
+Creiamo una funzione per categorizzare
+```{r}
+regola <- function(x){
+    prediction <- rep(NA, length(x))
+    prediction[x > 1.6] <- "spam"
+    prediction[x <= 1.6] <- "nonspam"
+    return(prediction)
+}
+smalldf  <- table(regola(smallspam$capitalAve),smallspam$type)/length(smallspam$type)
+smalldf
+paste0("accuratezza del ",round(smalldf[1] + smalldf[4],1)*100, "%")
+```
+Funziona in modo perfetto, ho lavorato su dati che già conoscevo
+Ora applichiamolo su tutte le email (che ancora non conosco)
+```{r}
+bigdf <- table(regola(spam$capitalAve), spam$type)
+bigdf
+paste0("accuratezza del ",round((bigdf[1] + bigdf[4])/length(spam$type),1)*100, "%")
+```
+Non è più così accurato, infatti
+
+# Prediction study design
+1. definire errore
+2. split data (training, test)
+and more
+
+data dimension:
+
+* training 60% 
+* test 20%
+* validation 20%
+
+# Types of error
+* true positive = persona malata, la diagnostico malata
+* falso positivo = persona sana, la diagnostico malata **type_1 error**
+* True negative = persona sana, la diagnostico sana
+* False negative = persona malata, la diagnostico sana **type_2 error**
+
+positive = ok, negative = rejected
+### key quantities
+* sensitivity positive test/disease tp/(tp + fn)
+* specificity negative test/not disease
+* positive predicted value disease/ positive test
+* Accuracy    correct outcome
+```{r}
+bigdf
+paste0("sensitivity ", round((bigdf[1]/(bigdf[3]+bigdf[1]))*100,1), "%")
+paste0("specificity ", round((bigdf[4]/(bigdf[2]+bigdf[4]))*100,1), "%")
+paste0("accuracy ", round(((bigdf[4]+bigdf[1])/(bigdf[1]+bigdf[2]+bigdf[3]+bigdf[4]))*100,1), "%")
+paste0("Positive predicted value ", round((bigdf[1]/(bigdf[1]+bigdf[2]))*100,1), "%")
+paste0("Negative predicted value ", round((bigdf[4]/(bigdf[4]+bigdf[3]))*100,1), "%")
+```
+
+# ROC curves
+Misura la bontà di un algoritmo di predizione
+
+* asse x ho 1- specificity (probabilità di essere un falso positivo)
+* asse y ho sensitivity (probsbilità di essere un vero positivo)
+
+L'area sotto la curva rappresenta quanto è buono:
+
+* AUC = 0.5 linea a 45°(random)
+* AUC = 1 perfetto
+* AUC ~ 0,8 considerato buono
+
+# Cross validation
+utilizzata per identificare features rilevanti e creare modelli e stimare parametri     
+si tratta di dividere i dati...
+tipi di divisione:
+
+* K-fold; classico, k grande = - errori + varianza
+* random subsampling; prendo dei pezzettini a caso;
+* leave one out
+
+# What data should you use
